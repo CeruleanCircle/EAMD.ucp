@@ -1,6 +1,6 @@
 {
-  "extends": [
-    "oclif",
-    "oclif-typescript"
-  ]
+  "extends": ["eslint:recommended",
+  // "oclif",
+//  "oclif-typescript"
+]
 }
