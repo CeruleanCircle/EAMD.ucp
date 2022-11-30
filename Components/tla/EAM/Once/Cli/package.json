@@ -1,40 +1,32 @@
 {
   "name": "@cerulean-circle/once-cli",
-  "version": "0.0.0",
-  "description": "oclif example Hello World CLI",
+  "version": "0.0.1",
+  "description": "once cli",
   "author": "phibar | CeruleanCircle",
   "bin": {
     "once": "./bin/run.mjs"
   },
+  "type": "module",
   "homepage": "https://github.com/cerulean-circle/once-cli",
   "license": "AGPL-3.0",
-  "main": "dist/index.js",
-  "repository": "cerulean-circle/once-cli",
+  "main": "dist/index.mjs",
   "files": [
     "/bin",
-    "/dist",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/dist"
   ],
   "dependencies": {
     "@oclif/core": "^1.20.4",
+    "@oclif/plugin-autocomplete": "^1.3.6",
     "@oclif/plugin-help": "^5.1.19",
     "@oclif/plugin-plugins": "^2.1.7"
   },
   "devDependencies": {
-    "@oclif/test": "^2.2.12",
-    "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.9",
-    "chai": "^4.3.7",
     "eslint": "^8.28.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
-    "mocha": "^10.1.0",
     "oclif": "^3.3.0",
-    "shx": "^0.3.4",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.4.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   },
   "oclif": {
@@ -43,22 +35,17 @@
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-autocomplete"
     ],
-    "topicSeparator": " ",
-    "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
-      }
-    }
+    "topicSeparator": ":"
   },
   "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
+    "build": "rimraf dist && tsc",
     "lint": "eslint . --ext .ts --config .eslintrc",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
-    "prepack": "yarn build && oclif manifest && oclif readme",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "postpack": "rimraf rm -f oclif.manifest.json",
+    "posttest": "lint",
+    "prepack": "pnpm build && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md"
   },
   "engines": {

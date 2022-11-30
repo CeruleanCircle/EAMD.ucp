@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "importHelpers": true,
+    "sourceMap": true,
+    "strict": true,
     "module": "ESNext",
     "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
-    "strict": true,
     "target": "ESNext",
-    "composite": true
   },
   "ts-node": {
     "esm": true

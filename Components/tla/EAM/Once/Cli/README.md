@@ -1,18 +1,12 @@
-oclif-hello-world
-=================
+# tla.EAM.Once.Cli
 
-oclif example Hello World CLI
-
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
-
+## Contents
 <!-- toc -->
+* [tla.EAM.Once.Cli](#tlaeamoncecli)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
 <!-- usage -->
 ```sh-session
@@ -20,17 +14,21 @@ $ npm install -g @cerulean-circle/once-cli
 $ once COMMAND
 running command...
 $ once (--version)
-@cerulean-circle/once-cli/0.0.0 darwin-arm64 node-v19.1.0
+@cerulean-circle/once-cli/0.0.1 darwin-arm64 node-v19.1.0
 $ once --help [COMMAND]
 USAGE
   $ once COMMAND
 ...
 ```
 <!-- usagestop -->
+
 # Commands
 <!-- commands -->
+* [`once autocomplete [SHELL]`](#once-autocomplete-shell)
 * [`once hello PERSON`](#once-hello-person)
-* [`once hello world`](#once-hello-world)
+* [`once hello:foo`](#once-hellofoo)
+* [`once hello:once`](#once-helloonce)
+* [`once hello:world`](#once-helloworld)
 * [`once help [COMMAND]`](#once-help-command)
 * [`once plugins`](#once-plugins)
 * [`once plugins:install PLUGIN...`](#once-pluginsinstall-plugin)
@@ -40,7 +38,36 @@ USAGE
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin)
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-1)
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-2)
-* [`once plugins update`](#once-plugins-update)
+* [`once plugins:update`](#once-pluginsupdate)
+
+## `once autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ once autocomplete [SHELL] [-r]
+
+ARGUMENTS
+  SHELL  shell type
+
+FLAGS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  display autocomplete installation instructions
+
+EXAMPLES
+  $ once autocomplete
+
+  $ once autocomplete bash
+
+  $ once autocomplete zsh
+
+  $ once autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.6/src/commands/autocomplete/index.ts)_
 
 ## `once hello PERSON`
 
@@ -64,21 +91,51 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/cerulean-circle/once-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
+## `once hello:foo`
 
-## `once hello world`
+Say hello foo
+
+```
+USAGE
+  $ once hello:foo
+
+DESCRIPTION
+  Say hello foo
+
+EXAMPLES
+  $ once hello:foo
+  hello foo! (./src/commands/hello/world.ts)
+```
+
+## `once hello:once`
+
+Say hello once
+
+```
+USAGE
+  $ once hello:once
+
+DESCRIPTION
+  Say hello once
+
+EXAMPLES
+  $ once hello:once
+  hello world! (./src/commands/hello/world.ts)
+```
+
+## `once hello:world`
 
 Say hello world
 
 ```
 USAGE
-  $ once hello world
+  $ once hello:world
 
 DESCRIPTION
   Say hello world
 
 EXAMPLES
-  $ once hello world
+  $ once hello:world
   hello world! (./src/commands/hello/world.ts)
 ```
 
@@ -150,7 +207,7 @@ DESCRIPTION
 
 
 ALIASES
-  $ once plugins add
+  $ once plugins:add
 
 EXAMPLES
   $ once plugins:install myplugin 
@@ -182,6 +239,8 @@ EXAMPLES
   $ once plugins:inspect myplugin
 ```
 
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/inspect.ts)_
+
 ## `once plugins:install PLUGIN...`
 
 Installs a plugin into the CLI.
@@ -210,7 +269,7 @@ DESCRIPTION
 
 
 ALIASES
-  $ once plugins add
+  $ once plugins:add
 
 EXAMPLES
   $ once plugins:install myplugin 
@@ -219,6 +278,8 @@ EXAMPLES
 
   $ once plugins:install someuser/someplugin
 ```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/install.ts)_
 
 ## `once plugins:link PLUGIN`
 
@@ -247,28 +308,7 @@ EXAMPLES
   $ once plugins:link myplugin
 ```
 
-## `once plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ once plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ once plugins unlink
-  $ once plugins remove
-```
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/link.ts)_
 
 ## `once plugins:uninstall PLUGIN...`
 
@@ -289,8 +329,8 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ once plugins unlink
-  $ once plugins remove
+  $ once plugins:unlink
+  $ once plugins:remove
 ```
 
 ## `once plugins:uninstall PLUGIN...`
@@ -312,17 +352,42 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ once plugins unlink
-  $ once plugins remove
+  $ once plugins:unlink
+  $ once plugins:remove
 ```
 
-## `once plugins update`
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/uninstall.ts)_
+
+## `once plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ once plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ once plugins:unlink
+  $ once plugins:remove
+```
+
+## `once plugins:update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ once plugins update [-h] [-v]
+  $ once plugins:update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -331,4 +396,6 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
