@@ -4,7 +4,7 @@
   "description": "oclif example Hello World CLI",
   "author": "phibar | CeruleanCircle",
   "bin": {
-    "once": "./bin/run"
+    "once": "./bin/run.mjs"
   },
   "homepage": "https://github.com/cerulean-circle/once-cli",
   "license": "AGPL-3.0",
