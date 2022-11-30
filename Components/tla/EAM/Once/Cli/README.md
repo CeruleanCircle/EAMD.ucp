@@ -26,7 +26,6 @@ USAGE
 <!-- commands -->
 * [`once autocomplete [SHELL]`](#once-autocomplete-shell)
 * [`once hello PERSON`](#once-hello-person)
-* [`once hello:foo`](#once-hellofoo)
 * [`once hello:once`](#once-helloonce)
 * [`once hello:world`](#once-helloworld)
 * [`once help [COMMAND]`](#once-help-command)
@@ -89,22 +88,6 @@ DESCRIPTION
 EXAMPLES
   $ oex hello friend --from oclif
   hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-## `once hello:foo`
-
-Say hello foo
-
-```
-USAGE
-  $ once hello:foo
-
-DESCRIPTION
-  Say hello foo
-
-EXAMPLES
-  $ once hello:foo
-  hello foo! (./src/commands/hello/world.ts)
 ```
 
 ## `once hello:once`
