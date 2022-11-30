@@ -51,9 +51,6 @@
     "prepack": "pnpm build && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md"
   },
-  "engines": {
-    "node": ">=12.0.0"
-  },
   "bugs": "https://github.com/cerulean-circle/once-cli/issues",
   "keywords": [
     "oclif"
