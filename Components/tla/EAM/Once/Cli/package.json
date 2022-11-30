@@ -22,11 +22,10 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
+    "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
-    "eslint-plugin-oclif": "^0.1.0",
     "eslint-plugin-once": "workspace:1.0.0",
     "oclif": "^3.3.0",
     "rimraf": "^3.0.2",

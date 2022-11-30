@@ -1,5 +1,6 @@
 {
     "extends": [
-        "plugin:once/node"
+        "plugin:once/node",
+        "oclif-typescript"
     ]
 }
