@@ -10,11 +10,11 @@
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g @cerulean-circle/once-cli
+$ npm install -g @eamd.ucp/tla.eam.once.cli
 $ once COMMAND
 running command...
 $ once (--version)
-@cerulean-circle/once-cli/0.0.1 darwin-arm64 node-v19.1.0
+@eamd.ucp/tla.eam.once.cli/0.0.1 darwin-arm64 node-v19.1.0
 $ once --help [COMMAND]
 USAGE
   $ once COMMAND
@@ -38,6 +38,8 @@ USAGE
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-1)
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-2)
 * [`once plugins:update`](#once-pluginsupdate)
+* [`once typescript [FILE]`](#once-typescript-file)
+* [`once typescript:config [FILE]`](#once-typescriptconfig-file)
 
 ## `once autocomplete [SHELL]`
 
@@ -381,4 +383,42 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/update.ts)_
+
+## `once typescript [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ once typescript [FILE] [-n <value>] [-f]
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ once typescript
+```
+
+## `once typescript:config [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ once typescript:config [FILE] [-n <value>] [-f]
+
+FLAGS
+  -f, --force
+  -n, --name=<value>  name to print
+
+DESCRIPTION
+  describe the command here
+
+EXAMPLES
+  $ once typescript:config
+```
 <!-- commandsstop -->
