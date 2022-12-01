@@ -1,6 +1,6 @@
 {
     "extends": [
-        "plugin:once/node",
+        "plugin:@eamd.ucp/tla.eam.once.ucpcomponent.eslint/node",
         "oclif-typescript"
     ]
 }
