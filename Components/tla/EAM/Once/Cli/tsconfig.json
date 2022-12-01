@@ -1,18 +1,7 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "sourceMap": true,
-    "strict": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src",
-    "target": "ESNext",
-  },
-  "ts-node": {
-    "esm": true
-  },
-  "include": [
-    "src/**/*"
-  ]
+    "extends": "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript",
+    "compilerOptions": {
+        "rootDir": "./src",
+        "outDir": "./dist",
+    },
 }

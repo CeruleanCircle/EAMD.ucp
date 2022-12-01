@@ -5,8 +5,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
+  "author": "phibar | CeruleanCircle",
   "license": "AGPL-3.0",
   "devDependencies": {
     "typescript": "^4.9.3"
