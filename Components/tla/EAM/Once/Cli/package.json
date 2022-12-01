@@ -18,10 +18,13 @@
     "@oclif/core": "^1.20.4",
     "@oclif/plugin-autocomplete": "^1.3.6",
     "@oclif/plugin-help": "^5.1.19",
-    "@oclif/plugin-plugins": "^2.1.7"
+    "@oclif/plugin-plugins": "^2.1.7",
+    "glob": "^8.0.3",
+    "sort-compiler-options": "^0.2.0"
   },
   "devDependencies": {
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@types/glob": "^8.0.0",
     "@types/node": "^18.11.10",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
@@ -44,7 +47,8 @@
     "topicSeparator": ":"
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+    "build": "tsc",
     "lint": "eslint src/**",
     "postpack": "rimraf rm -f oclif.manifest.json",
     "posttest": "lint",
