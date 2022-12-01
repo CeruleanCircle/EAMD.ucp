@@ -1,5 +1,5 @@
 {
-  "name": "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint",
+  "name": "@eamd.ucp/tla.eam.once.ucpcomponent.eslint",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",

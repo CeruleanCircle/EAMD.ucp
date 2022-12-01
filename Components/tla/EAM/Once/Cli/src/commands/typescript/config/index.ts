@@ -13,7 +13,7 @@ export default class TypescriptConfig extends Command {
   	// flag with no value (-f, --force)
   	force: Flags.boolean({char: 'f'}),
   }
-
+  
   static args = [{name: 'file'}]
 
   public async run(): Promise<void> {

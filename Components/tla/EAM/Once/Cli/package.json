@@ -23,7 +23,7 @@
     "sort-compiler-options": "^0.2.0"
   },
   "devDependencies": {
-    "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint":"workspace:*",
+    "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
     "@types/glob": "^8.0.0",
     "@types/node": "^18.11.10",

@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint"
   },
   "author": "phibar | CeruleanCircle",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "typescript": "^4.9.3"
+    "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
+     "typescript": "^4.9.3"
   },
   "files": [
     "src/tsconfig.base.json"
