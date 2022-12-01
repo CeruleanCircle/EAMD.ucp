@@ -84,8 +84,10 @@ importers:
 
   Components/tla/EAM/Once/UcpComponent/Configuration/Typescript:
     specifiers:
+      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       typescript: ^4.9.3
     devDependencies:
+      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../EsLint
       typescript: 4.9.3
 
 packages:
@@ -1288,8 +1290,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /aws-sdk/2.1265.0:
-    resolution: {integrity: sha512-PcW3VAxatnOgSwdENkXpFAKnE6P5GJeI7yxjEhjHSLXFyOzQZQZIT5NMCs7B25nB6iACzxizjKaYbU0kNA/8/Q==}
+  /aws-sdk/2.1266.0:
+    resolution: {integrity: sha512-UUj4TXP/V0rCbBmuIu7NLQyX4j2ZU81iEiM856eGvhWGha2M3LnKteA6JqKMjGx2weKRVaIcfkgLCyKIs3KEAg==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -3940,7 +3942,7 @@ packages:
       '@oclif/plugin-help': 5.1.19
       '@oclif/plugin-not-found': 2.3.9
       '@oclif/plugin-warn-if-update-available': 2.0.14
-      aws-sdk: 2.1265.0
+      aws-sdk: 2.1266.0
       concurrently: 7.6.0
       debug: 4.3.4
       find-yarn-workspace-root: 2.0.0

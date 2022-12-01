@@ -2,12 +2,15 @@
   "name": "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript",
   "version": "1.0.0",
   "description": "",
+  "license": "AGPL-3.0",
+  "author": "phibar <philipp@ceruleancircle.com> (https://ceruleancircle.com)",
+  "contributors": [
+    "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint"
   },
-  "author": "phibar | CeruleanCircle",
-  "license": "AGPL-3.0",
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
      "typescript": "^4.9.3"
