@@ -1,6 +1,6 @@
 {
-  "name": "@cerulean-circle/once-cli",
-  "version": "0.0.1",
+  "name": "@eamd.ucp/tla.eam.once.cli",
+  "version": "main",
   "description": "once cli",
   "author": "phibar | CeruleanCircle",
   "bin": {

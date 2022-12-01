@@ -1,0 +1,17 @@
+{
+  "name": "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "files": [
+    "src/tsconfig.base.json"
+  ]
+}
