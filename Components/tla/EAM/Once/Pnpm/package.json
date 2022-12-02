@@ -1,12 +1,15 @@
 {
-  "name": "@cerulean-circle/once-pnpm",
+  "name": "@eamd.ucp/tla.eam.once.pnpm",
   "version": "1.0.0",
   "description": "",
+  "license": "AGPL-3.0",
+  "author": "phibar <philipp@ceruleancircle.com> (https://ceruleancircle.com)",
+  "contributors": [
+    "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "AGPL-3.0"
+  "keywords": []
 }
