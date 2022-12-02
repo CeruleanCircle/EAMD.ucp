@@ -4,6 +4,7 @@
       "build": {
       },
       "lint": {
+        "cache": false
       }
     }
   }
