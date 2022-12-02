@@ -21,10 +21,12 @@
     "@oclif/plugin-plugins": "^2.1.7"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.10",
+    "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
+    "eslint-plugin-once": "workspace:1.0.0",
     "oclif": "^3.3.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
@@ -42,14 +44,11 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "lint": "eslint . --ext .ts --config .eslintrc",
+    "lint": "eslint src/**",
     "postpack": "rimraf rm -f oclif.manifest.json",
     "posttest": "lint",
     "prepack": "pnpm build && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md"
-  },
-  "engines": {
-    "node": ">=12.0.0"
   },
   "bugs": "https://github.com/cerulean-circle/once-cli/issues",
   "keywords": [
