@@ -9,6 +9,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx -y only-allow pnpm",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint -- --fix"
@@ -16,5 +17,11 @@
   "keywords": [],
   "devDependencies": {
     "turbo": "^1.6.3"
-  }  
+  },
+    "engines" : { 
+    "pnpm" : ">=7.17.1",
+    "node" : ">=18.12.1",
+    "npm":">=8.19.2"
+  }  ,
+  "packageManager": "^pnpm@7.17.1"
 }

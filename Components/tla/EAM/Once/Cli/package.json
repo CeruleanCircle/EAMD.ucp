@@ -31,7 +31,7 @@
     "@types/glob": "^8.0.0",
     "@types/node": "^18.11.10",
     "@typescript-eslint/parser": "^5.45.0",
-    "eslint": "^8.28.0",
+    "eslint": "^8.29.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
     "oclif": "^3.3.0",
