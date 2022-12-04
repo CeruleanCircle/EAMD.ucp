@@ -18,7 +18,7 @@
     "/dist"
   ],
   "dependencies": {
-    "@eamd.ucp/tla.eam.once.cli.plugin": "workspace:^0.0.1",
+    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1",
     "@oclif/core": "^1.20.4",
     "@oclif/plugin-autocomplete": "^1.3.6",
     "@oclif/plugin-commands": "^2.2.1",
@@ -52,7 +52,7 @@
       "@oclif/plugin-commands",
       "@oclif/plugin-which",
       "@oclif/plugin-not-found",
-      "@eamd.ucp/tla.eam.once.cli.plugin"
+      "@eamd.ucp/tla.eam.once.github.cli"
     ],
     "topicSeparator": ":"
   },

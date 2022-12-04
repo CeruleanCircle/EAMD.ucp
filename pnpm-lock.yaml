@@ -11,7 +11,7 @@ importers:
   Components/tla/EAM/Once/Cli:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
-      '@eamd.ucp/tla.eam.once.cli.plugin': workspace:^0.0.1
+      '@eamd.ucp/tla.eam.once.github.cli': workspace:^0.0.1
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
       '@oclif/core': ^1.20.4
       '@oclif/plugin-autocomplete': ^1.3.6
@@ -32,7 +32,7 @@ importers:
       sort-compiler-options: ^0.2.0
       typescript: ^4.9.3
     dependencies:
-      '@eamd.ucp/tla.eam.once.cli.plugin': link:../PluginOnce
+      '@eamd.ucp/tla.eam.once.github.cli': link:../Github/Cli
       '@oclif/core': 1.20.4
       '@oclif/plugin-autocomplete': 1.3.6
       '@oclif/plugin-commands': 2.2.1
@@ -55,7 +55,7 @@ importers:
       rimraf: 3.0.2
       typescript: 4.9.3
 
-  Components/tla/EAM/Once/PluginOnce:
+  Components/tla/EAM/Once/Github/Cli:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
@@ -71,8 +71,8 @@ importers:
     dependencies:
       '@oclif/core': 1.20.4
     devDependencies:
-      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../UcpComponent/Configuration/EsLint
-      '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../UcpComponent/Configuration/Typescript
+      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../../UcpComponent/Configuration/EsLint
+      '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../../UcpComponent/Configuration/Typescript
       '@types/node': 18.11.10
       '@typescript-eslint/parser': 5.45.0_s5ps7njkmjlaqajutnox5ntcla
       eslint: 8.29.0
