@@ -14,8 +14,10 @@ hello world! (./src/commands/hello/world.ts)
 	static args = []
 
 	async run(): Promise<void> {
+		// this.config.root = '/Users/Shared/EAMD.ucp/'
 		await this.config.runHook('github', {id: 'my_command'})
 		this.log('hello test! (./src/commands/hello/test.ts)')
+		console.dir(this)
 	}
 }
 

@@ -7,5 +7,3 @@ export default interface File {
     write(content: string): void
     read(): string
 }
-
-export{}
