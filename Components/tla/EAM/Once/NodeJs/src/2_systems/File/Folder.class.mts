@@ -8,9 +8,11 @@ export default class DefaultFolder extends DefaultFile implements Folder {
 	static getFilesByExtentions(path: string, extensions?: string[] | undefined, recursive?: boolean | undefined): FileInterface[] {
 		return new DefaultFolder(path).getFilesByExtentions(extensions, recursive)
 	}
+	
 	static getFilesByFileName(path: string, fileNames?: string[] | undefined, recursive?: boolean | undefined): FileInterface[] {
 		return new DefaultFolder(path).getFilesByFileName(fileNames, recursive)
 	}
+	
 	getFilesByExtentions(extensions?: string[] | undefined, recursive?: boolean | undefined): FileInterface[] {
 		return this.getFiles(this.getFilesByExtentions, recursive)
 			.filter(x => extensions === undefined || extensions.includes(x.extension))

@@ -2,6 +2,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/strict",
         "turbo",
         "prettier",
         "plugin:import/recommended",
@@ -14,13 +16,14 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "es2021",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "tsconfig.json"
     },
     "settings": {
         "import/resolver": {
-          "typescript": {}
+            "typescript": {}
         }
-      },
+    },
     "rules": {
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/naming-convention": "error",
@@ -40,7 +43,22 @@
             "error",
             "never"
         ],
-        "no-multiple-empty-lines": ["error",{ "max": 1, "maxEOF": 0 }]
-     
-    }
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1,
+                "maxEOF": 0
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.class.mts"
+            ],
+            "rules": {
+                "@typescript-eslint/unbound-method": "off"
+            }
+        }
+    ]
 }

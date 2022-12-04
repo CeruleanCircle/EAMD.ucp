@@ -7,6 +7,6 @@ export interface GithubHooks extends Hooks {
 			github: string | undefined;
 			argv: string[];
 		};
-		return: void;
+		return: void | never;
 	};
 }
