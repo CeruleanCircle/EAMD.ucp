@@ -25,8 +25,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`once autocomplete [SHELL]`](#once-autocomplete-shell)
-* [`once hello PERSON`](#once-hello-person)
-* [`once hello:once`](#once-helloonce)
+* [`once commands`](#once-commands)
 * [`once hello:world`](#once-helloworld)
 * [`once help [COMMAND]`](#once-help-command)
 * [`once plugins`](#once-plugins)
@@ -38,8 +37,7 @@ USAGE
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-1)
 * [`once plugins:uninstall PLUGIN...`](#once-pluginsuninstall-plugin-2)
 * [`once plugins:update`](#once-pluginsupdate)
-* [`once typescript [FILE]`](#once-typescript-file)
-* [`once typescript:config [FILE]`](#once-typescriptconfig-file)
+* [`once which`](#once-which)
 
 ## `once autocomplete [SHELL]`
 
@@ -70,43 +68,37 @@ EXAMPLES
 
 _See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.6/src/commands/autocomplete/index.ts)_
 
-## `once hello PERSON`
+## `once commands`
 
-Say hello
+list all the commands
 
 ```
 USAGE
-  $ once hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
+  $ once commands [--json] [-h] [--hidden] [--tree] [--columns <value> | -x] [--sort <value>] [--filter
+    <value>] [--output csv|json|yaml |  | [--csv | --no-truncate]] [--no-header | ]
 
 FLAGS
-  -f, --from=<value>  (required) Who is saying hello
+  -h, --help         Show CLI help.
+  -x, --extended     show extra columns
+  --columns=<value>  only show provided columns (comma-separated)
+  --csv              output is csv format [alias: --output=csv]
+  --filter=<value>   filter property by partial string matching, ex: name=foo
+  --hidden           show hidden commands
+  --no-header        hide table header from output
+  --no-truncate      do not truncate output to fit screen
+  --output=<option>  output in a more machine friendly format
+                     <options: csv|json|yaml>
+  --sort=<value>     property to sort by (prepend '-' for descending)
+  --tree             show tree of commands
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
+  list all the commands
 ```
 
-## `once hello:once`
-
-Say hello once
-
-```
-USAGE
-  $ once hello:once
-
-DESCRIPTION
-  Say hello once
-
-EXAMPLES
-  $ once hello:once
-  hello world! (./src/commands/hello/world.ts)
-```
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v2.2.1/src/commands/commands.ts)_
 
 ## `once hello:world`
 
@@ -384,41 +376,17 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.7/src/commands/plugins/update.ts)_
 
-## `once typescript [FILE]`
+## `once which`
 
-describe the command here
-
-```
-USAGE
-  $ once typescript [FILE] [-n <value>] [-f]
-
-FLAGS
-  -f, --force
-  -n, --name=<value>  name to print
-
-DESCRIPTION
-  describe the command here
-
-EXAMPLES
-  $ once typescript
-```
-
-## `once typescript:config [FILE]`
-
-describe the command here
+Show which plugin a command is in.
 
 ```
 USAGE
-  $ once typescript:config [FILE] [-n <value>] [-f]
-
-FLAGS
-  -f, --force
-  -n, --name=<value>  name to print
+  $ once which
 
 DESCRIPTION
-  describe the command here
-
-EXAMPLES
-  $ once typescript:config
+  Show which plugin a command is in.
 ```
+
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/v2.2.2/src/commands/which.ts)_
 <!-- commandsstop -->

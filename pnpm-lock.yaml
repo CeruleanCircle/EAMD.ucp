@@ -60,31 +60,19 @@ importers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
       '@oclif/core': ^1.20.4
-      '@oclif/plugin-autocomplete': ^1.3.6
-      '@oclif/plugin-help': ^5.1.19
-      '@oclif/plugin-plugins': ^2.1.7
-      '@types/glob': ^8.0.0
       '@types/node': ^18.11.10
       '@typescript-eslint/parser': ^5.45.0
       eslint: ^8.29.0
       eslint-config-oclif: ^4.0.0
       eslint-config-oclif-typescript: ^1.0.3
-      glob: ^8.0.3
       oclif: ^3.3.0
       rimraf: ^3.0.2
-      sort-compiler-options: ^0.2.0
       typescript: ^4.9.3
     dependencies:
       '@oclif/core': 1.20.4
-      '@oclif/plugin-autocomplete': 1.3.6
-      '@oclif/plugin-help': 5.1.19
-      '@oclif/plugin-plugins': 2.1.7
-      glob: 8.0.3
-      sort-compiler-options: 0.2.0
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../UcpComponent/Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../UcpComponent/Configuration/Typescript
-      '@types/glob': 8.0.0
       '@types/node': 18.11.10
       '@typescript-eslint/parser': 5.45.0_s5ps7njkmjlaqajutnox5ntcla
       eslint: 8.29.0
