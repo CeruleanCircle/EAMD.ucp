@@ -49,7 +49,8 @@
                 "max": 1,
                 "maxEOF": 0
             }
-        ]
+        ],
+        "@typescript-eslint/adjacent-overload-signatures": "off"
     },
     "overrides": [
         {

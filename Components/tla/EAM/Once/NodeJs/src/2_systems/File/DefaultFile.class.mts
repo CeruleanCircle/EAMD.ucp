@@ -1,7 +1,7 @@
 import File from "@eamd.ucp/tla.eam.once.services/dist/3_services/File/File.interface.mjs"
 import { FileType } from "@eamd.ucp/tla.eam.once.services/dist/3_services/File/FileType.enum.mjs"
-import { existsSync, writeFileSync, readFileSync, lstatSync, lstat, Stats } from "fs"
-import { basename, dirname, extname } from "path"
+import { existsSync, writeFileSync, readFileSync, lstatSync, lstat, Stats, renameSync } from "fs"
+import { basename, dirname, extname, join } from "path"
 
 export default class DefaultFile implements File {
 	constructor(public fullPath:string = "") {
@@ -27,10 +27,6 @@ export default class DefaultFile implements File {
 			} )
 		})
 	}
-	
-	get name() {
-		return this.filename
-	}
 
 	get exists() {
 		return existsSync(this.fullPath)
@@ -48,6 +44,13 @@ export default class DefaultFile implements File {
 		return dirname(this.fullPath)
 	}
 
+	get name() {
+		return this.filename
+	}
+
+	set name(value:string){
+		renameSync(this.fullPath, join(this.basePath,value))
+	}
 	write(content: string): void {
 		writeFileSync(this.fullPath, content)
 	}
