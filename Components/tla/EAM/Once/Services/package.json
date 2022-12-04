@@ -1,0 +1,12 @@
+{
+  "name": "@eamd.ucp/tla.eam.once.services",
+  "version": "1.0.0",
+  "description": "",
+  "license": "AGPL-3.0",
+  "contributors": [
+    "phibar <philipp@ceruleancircle.com> (https://ceruleancircle.com)",
+    "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
+  ],
+  "scripts": {
+  }
+}
