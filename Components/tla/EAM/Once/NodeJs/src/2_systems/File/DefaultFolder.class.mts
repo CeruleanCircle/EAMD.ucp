@@ -2,7 +2,7 @@ import FileInterface from "@eamd.ucp/tla.eam.once.services/src/3_services/File/F
 import Folder from "@eamd.ucp/tla.eam.once.services/src/3_services/File/Folder.interface.mjs"
 import { lstatSync, readdirSync } from "fs"
 import { join } from "path"
-import DefaultFile from "./File.class.mjs"
+import DefaultFile from "./DefaultFile.class.mjs"
 
 export default class DefaultFolder extends DefaultFile implements Folder {
 	static getFilesByExtentions(path: string, extensions?: string[] | undefined, recursive?: boolean | undefined): FileInterface[] {
