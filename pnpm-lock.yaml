@@ -91,11 +91,13 @@ importers:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
+      '@types/node': ^18.11.10
       eslint: ^8.29.0
       typescript: ^4.9.3
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../UcpComponent/Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../UcpComponent/Configuration/Typescript
+      '@types/node': 18.11.10
       eslint: 8.29.0
       typescript: 4.9.3
 
@@ -139,6 +141,7 @@ importers:
       eslint-plugin-dependencies: ^2.4.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
+      eslint-plugin-unused-imports: ^2.0.0
       prettier: ^2.8.0
       rimraf: ^3.0.2
       typescript: ^4.9.3
@@ -156,6 +159,7 @@ importers:
       eslint-plugin-dependencies: 2.4.0
       eslint-plugin-import: 2.26.0_n542pvy4d6vz5nffbpq5koul4e
       eslint-plugin-prettier: 4.2.1_nrhoyyjffvfyk4vtlt5destxgm
+      eslint-plugin-unused-imports: 2.0.0_sklehmazzizroldsy2klx2uism
       prettier: 2.8.0
       rimraf: 3.0.2
       typescript: 4.9.3
@@ -1893,6 +1897,26 @@ packages:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.29.0
+    dev: true
+
+  /eslint-plugin-unused-imports/2.0.0_sklehmazzizroldsy2klx2uism:
+    resolution: {integrity: sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.45.0_yjegg5cyoezm3fzsmuszzhetym
+      eslint: 8.29.0
+      eslint-rule-composer: 0.3.0
+    dev: true
+
+  /eslint-rule-composer/0.3.0:
+    resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
+    engines: {node: '>=4.0.0'}
     dev: true
 
   /eslint-scope/5.1.1:
