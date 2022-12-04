@@ -1,11 +1,11 @@
-import File from '@eamd.ucp/tla.eam.once.services/src/3_services/File/File.interface.mjs'
-import { existsSync, writeFileSync, readFileSync } from 'fs'
-import { basename, dirname, extname } from 'path'
+import File from "@eamd.ucp/tla.eam.once.services/src/3_services/File/File.interface.mjs"
+import { existsSync, writeFileSync, readFileSync } from "fs"
+import { basename, dirname, extname } from "path"
 
 export default class DefaultFile implements File {
 	fullPath: string
 
-	constructor(path = '') {
+	constructor(path = "") {
 		this.fullPath = path
 	}
 

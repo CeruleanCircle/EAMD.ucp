@@ -1,4 +1,4 @@
-import File from './File.interface.mjs'
+import File from "./File.interface.mjs"
 
 export default interface Folder extends File {
     getFilesByExtentions(extensions?: string[], recursive?: boolean): File[]

@@ -1,5 +1,4 @@
-import { Hooks } from '@oclif/core/lib/interfaces';
-
+import { Hooks } from "@oclif/core/lib/interfaces"
 
 export interface GithubHooks extends Hooks {
 	github: {

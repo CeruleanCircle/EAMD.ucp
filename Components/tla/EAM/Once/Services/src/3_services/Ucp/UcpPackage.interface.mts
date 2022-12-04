@@ -1,5 +1,3 @@
-import { UcpComponent } from "./UcpComponent.interface.mjs";
+import { UcpComponent } from "./UcpComponent.interface.mjs"
 
-export interface UcpPackage extends UcpComponent{
-    
-}
+export type UcpPackage = UcpComponent

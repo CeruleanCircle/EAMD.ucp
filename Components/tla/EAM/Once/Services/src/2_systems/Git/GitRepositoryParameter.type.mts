@@ -1,4 +1,4 @@
-import { GitCloneParameter } from './GitCloneParameter.type.mjs'
+import { GitCloneParameter } from "./GitCloneParameter.type.mjs"
 
 export type GitRepositoryParameter = {
     baseDir: string;

@@ -1,4 +1,4 @@
-import File from '../File/File.interface.mjs'
+import File from "../File/File.interface.mjs"
 
 export interface UcpUnit extends File {
     name:string

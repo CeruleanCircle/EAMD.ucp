@@ -1,5 +1,5 @@
-import Folder from '../File/Folder.interface.mjs'
-import GitSubmodule from './GitSubmodule.interface.mjs'
+import Folder from "../File/Folder.interface.mjs"
+import GitSubmodule from "./GitSubmodule.interface.mjs"
 
 export default interface GitRepository extends Folder {
   remoteUrl: string;
