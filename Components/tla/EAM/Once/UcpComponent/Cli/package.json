@@ -7,21 +7,20 @@
     "phibar <philipp@ceruleancircle.com> (https://ceruleancircle.com)",
     "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
   ],
-
   "type": "module",
   "files": [
     "/dist"
   ],
   "dependencies": {
-    "@oclif/core": "^1.20.4",
-    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1"
+    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1",
+    "@oclif/core": "^1.20.4"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
     "@types/node": "^18.11.10",
     "@typescript-eslint/parser": "^5.45.0",
-    "eslint": "^8.29.0",
+    "eslint": "^7.0.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.3",
     "oclif": "^3.3.0",
