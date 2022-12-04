@@ -26,6 +26,7 @@ USAGE
 <!-- commands -->
 * [`once autocomplete [SHELL]`](#once-autocomplete-shell)
 * [`once commands`](#once-commands)
+* [`once hello:test`](#once-hellotest)
 * [`once hello:world`](#once-helloworld)
 * [`once help [COMMAND]`](#once-help-command)
 * [`once plugins`](#once-plugins)
@@ -99,6 +100,22 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v2.2.1/src/commands/commands.ts)_
+
+## `once hello:test`
+
+Say hello test
+
+```
+USAGE
+  $ once hello:test
+
+DESCRIPTION
+  Say hello test
+
+EXAMPLES
+  $ once hello:test
+  hello world! (./src/commands/hello/world.ts)
+```
 
 ## `once hello:world`
 
