@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1",
-    "@oclif/core": "^1.20.4"
+    "@oclif/core": "github:phibar/core"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",

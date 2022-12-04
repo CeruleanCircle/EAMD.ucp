@@ -1,7 +1,9 @@
-import {Hook} from '@oclif/core'
+import { Hook } from '@oclif/core'
+import { GithubHooks } from './GithubHooks';
 
-const hook: Hook<'github'> = async function (options) {
-	console.log(`example github hook running before ${options.id}`)
+const hook: Hook<'github',GithubHooks> = async function (options) {
+
+	console.log(`example github hook running before ${options}`)
 }
 
 export default hook

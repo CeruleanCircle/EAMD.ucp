@@ -123,7 +123,7 @@ importers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.github.cli': workspace:^0.0.1
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
-      '@oclif/core': ^1.20.4
+      '@oclif/core': github:phibar/core
       '@types/node': ^18.11.10
       '@typescript-eslint/parser': ^5.45.0
       eslint: ^8.29.0
@@ -132,7 +132,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@eamd.ucp/tla.eam.once.github.cli': link:../../Github/Cli
-      '@oclif/core': 1.20.4
+      '@oclif/core': github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../Configuration/Typescript
@@ -158,7 +158,6 @@ importers:
       eslint-plugin-dependencies: ^2.4.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
-      eslint-plugin-sort-class-members: ^1.16.0
       eslint-plugin-unused-imports: ^2.0.0
       prettier: ^2.8.0
       rimraf: ^3.0.2
@@ -177,7 +176,6 @@ importers:
       eslint-plugin-dependencies: 2.4.0
       eslint-plugin-import: 2.26.0_n542pvy4d6vz5nffbpq5koul4e
       eslint-plugin-prettier: 4.2.1_nrhoyyjffvfyk4vtlt5destxgm
-      eslint-plugin-sort-class-members: 1.16.0_eslint@8.29.0
       eslint-plugin-unused-imports: 2.0.0_sklehmazzizroldsy2klx2uism
       prettier: 2.8.0
       rimraf: 3.0.2
@@ -1908,15 +1906,6 @@ packages:
       eslint-config-prettier: 8.5.0_eslint@8.29.0
       prettier: 2.8.0
       prettier-linter-helpers: 1.0.0
-    dev: true
-
-  /eslint-plugin-sort-class-members/1.16.0_eslint@8.29.0:
-    resolution: {integrity: sha512-8l0IqUmoupk9PvO5D4I5zJqirVe9sax5Hpfv9xQmnrSpLYkc8BSYGnUjuHGMSSe4jKuC73NIr38kQv1tPbO+Xg==}
-    engines: {node: '>=4.0.0'}
-    peerDependencies:
-      eslint: '>=0.8.0'
-    dependencies:
-      eslint: 8.29.0
     dev: true
 
   /eslint-plugin-turbo/0.0.7_eslint@8.29.0:
@@ -5203,6 +5192,42 @@ packages:
       taketalk: 1.0.0
       wrap-ansi: 2.1.0
     dev: true
+
+  github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22:
+    resolution: {tarball: https://codeload.github.com/phibar/core/tar.gz/1e7dd184efe1416952b3762b7d0896812a4e2c22}
+    name: '@oclif/core'
+    version: 1.20.4
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@oclif/linewrap': 1.0.0
+      '@oclif/screen': 3.0.3
+      ansi-escapes: 4.3.2
+      ansi-styles: 4.3.0
+      cardinal: 2.1.1
+      chalk: 4.1.2
+      clean-stack: 3.0.1
+      cli-progress: 3.11.2
+      debug: 4.3.4_supports-color@8.1.1
+      ejs: 3.1.8
+      fs-extra: 9.1.0
+      get-package-type: 0.1.0
+      globby: 11.1.0
+      hyperlinker: 1.0.0
+      indent-string: 4.0.0
+      is-wsl: 2.2.0
+      js-yaml: 3.14.1
+      natural-orderby: 2.0.3
+      object-treeify: 1.1.33
+      password-prompt: 1.1.2
+      semver: 7.3.8
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      supports-color: 8.1.1
+      supports-hyperlinks: 2.3.0
+      tslib: 2.4.1
+      widest-line: 3.1.0
+      wrap-ansi: 7.0.0
+    dev: false
 
   github.com/phibar/eslint-config-oclif-typescript/dd9e7c8e72b52a1b6a3cdbd684add125e3b98f36_s5ps7njkmjlaqajutnox5ntcla:
     resolution: {tarball: https://codeload.github.com/phibar/eslint-config-oclif-typescript/tar.gz/dd9e7c8e72b52a1b6a3cdbd684add125e3b98f36}
