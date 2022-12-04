@@ -12,7 +12,7 @@
     "preinstall": "npx -y only-allow pnpm",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint -- --fix"
+    "lint:fix": "turbo run lint --no-cache -- --fix"
   },
   "keywords": [],
   "devDependencies": {
