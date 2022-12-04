@@ -12,12 +12,12 @@
     "/dist"
   ],
   "dependencies": {
-    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1",
-    "@oclif/core": "github:phibar/core"
+    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@oclif/core": "^1.20.4",
     "@types/node": "^18.11.10",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.29.0",

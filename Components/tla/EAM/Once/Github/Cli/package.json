@@ -11,12 +11,10 @@
   "files": [
     "/dist"
   ],
-  "dependencies": {
-    "@oclif/core": "^1.20.4"
-  },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@oclif/core": "^1.20.4",
     "@types/node": "^18.11.10",
     "eslint": "^8.29.0",
     "oclif": "^3.3.1",

@@ -76,11 +76,10 @@ importers:
       oclif: ^3.3.1
       rimraf: ^3.0.2
       typescript: ^4.9.3
-    dependencies:
-      '@oclif/core': 1.20.4
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../../UcpComponent/Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../../UcpComponent/Configuration/Typescript
+      '@oclif/core': 1.20.4
       '@types/node': 18.11.10
       eslint: 8.29.0
       oclif: 3.3.1_7yoz4vugw4qcykie6sit5r22dm
@@ -123,7 +122,7 @@ importers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.github.cli': workspace:^0.0.1
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
-      '@oclif/core': github:phibar/core
+      '@oclif/core': ^1.20.4
       '@types/node': ^18.11.10
       '@typescript-eslint/parser': ^5.45.0
       eslint: ^8.29.0
@@ -132,10 +131,10 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@eamd.ucp/tla.eam.once.github.cli': link:../../Github/Cli
-      '@oclif/core': github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../Configuration/Typescript
+      '@oclif/core': github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22
       '@types/node': 18.11.10
       '@typescript-eslint/parser': 5.45.0_s5ps7njkmjlaqajutnox5ntcla
       eslint: 8.29.0
@@ -5194,7 +5193,7 @@ packages:
     dev: true
 
   github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22:
-    resolution: {tarball: https://codeload.github.com/phibar/core/tar.gz/1e7dd184efe1416952b3762b7d0896812a4e2c22}
+    resolution: {registry: https://registry.npmjs.org/, tarball: https://codeload.github.com/phibar/core/tar.gz/1e7dd184efe1416952b3762b7d0896812a4e2c22}
     name: '@oclif/core'
     version: 1.20.4
     engines: {node: '>=14.0.0'}
@@ -5227,7 +5226,7 @@ packages:
       tslib: 2.4.1
       widest-line: 3.1.0
       wrap-ansi: 7.0.0
-    dev: false
+    dev: true
 
   github.com/phibar/eslint-config-oclif-typescript/dd9e7c8e72b52a1b6a3cdbd684add125e3b98f36_s5ps7njkmjlaqajutnox5ntcla:
     resolution: {tarball: https://codeload.github.com/phibar/eslint-config-oclif-typescript/tar.gz/dd9e7c8e72b52a1b6a3cdbd684add125e3b98f36}
