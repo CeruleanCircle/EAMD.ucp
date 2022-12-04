@@ -23,5 +23,10 @@
     "node": ">=18.12.1",
     "npm": ">=8.19.2"
   },
-  "packageManager": "^pnpm@7.17.1"
+  "packageManager": "^pnpm@7.17.1",
+  "pnpm": {
+    "patchedDependencies": {
+      "eslint-config-oclif-typescript@1.0.3": "patches/eslint-config-oclif-typescript@1.0.3.patch"
+    }
+  }
 }

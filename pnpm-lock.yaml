@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  eslint-config-oclif-typescript@1.0.3:
+    hash: nbqhajnromaasxj43gnvvb2wne
+    path: patches/eslint-config-oclif-typescript@1.0.3.patch
+
 importers:
 
   .:
@@ -153,7 +158,7 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.9.3
     dependencies:
-      eslint-config-oclif-typescript: 1.0.3_s5ps7njkmjlaqajutnox5ntcla
+      eslint-config-oclif-typescript: 1.0.3_nbqhajnromaasxj43gnvvb2wne_s5ps7njkmjlaqajutnox5ntcla
     devDependencies:
       '@types/eslint': 8.4.10
       '@typescript-eslint/eslint-plugin': 5.45.0_yjegg5cyoezm3fzsmuszzhetym
@@ -1818,7 +1823,7 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  /eslint-config-oclif-typescript/1.0.3_s5ps7njkmjlaqajutnox5ntcla:
+  /eslint-config-oclif-typescript/1.0.3_nbqhajnromaasxj43gnvvb2wne_s5ps7njkmjlaqajutnox5ntcla:
     resolution: {integrity: sha512-TeJKXWBQ3uKMtzgz++UFNWpe1WCx8mfqRuzZy1LirREgRlVv656SkVG4gNZat5rRNIQgfDmTS+YebxK02kfylA==}
     engines: {node: '>=12.0.0'}
     dependencies:
@@ -1832,6 +1837,7 @@ packages:
       - supports-color
       - typescript
     dev: false
+    patched: true
 
   /eslint-config-prettier/8.5.0_eslint@8.29.0:
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
