@@ -1,5 +1,5 @@
 export enum FileType {
-    file,
-    folder,
-    symLink
+  file,
+  folder,
+  symLink,
 }
