@@ -28,7 +28,9 @@
     "typescript": "^4.9.3"
   },
   "oclif": {
-    "commands": "./dist/commands"
+    "hooks": {
+      "github": "./dist/hooks/github"
+    }
   },
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
