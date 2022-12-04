@@ -1,5 +1,5 @@
 {
-  "name": "@eamd.ucp/tla.eam.once.github.cli",
+  "name": "@eamd.ucp/tla.eam.once.git.cli",
   "version": "0.0.1",
   "description": "",
   "license": "AGPL-3.0",
@@ -27,10 +27,6 @@
     "typescript": "^4.9.3"
   },
   "oclif": {
-    "hooks": {
-      "github": "./dist/hooks/github",
-      "init": "./dist/hooks/init/myhook"
-    }
   },
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
