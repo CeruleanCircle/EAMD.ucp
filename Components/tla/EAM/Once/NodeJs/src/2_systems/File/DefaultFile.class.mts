@@ -1,5 +1,5 @@
-import File from "@eamd.ucp/tla.eam.once.services/src/3_services/File/File.interface.mjs"
-import { FileType } from "@eamd.ucp/tla.eam.once.services/src/3_services/File/FileType.enum.mjs"
+import File from "@eamd.ucp/tla.eam.once.services/dist/3_services/File/File.interface.mjs"
+import { FileType } from "@eamd.ucp/tla.eam.once.services/dist/3_services/File/FileType.enum.mjs"
 import { existsSync, writeFileSync, readFileSync, lstatSync, lstat, Stats } from "fs"
 import { basename, dirname, extname } from "path"
 

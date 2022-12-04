@@ -8,8 +8,8 @@
     "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
   ],
   "scripts": {
-    "clean":"rimraf dist",
-    "build": "pnpm run clean && tsc",
+    "clean": "rimraf dist",
+    "build": " tsc",
     "lint": "eslint src/**"
   },
   "devDependencies": {
