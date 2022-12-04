@@ -14,6 +14,7 @@
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@eamd.ucp/tla.eam.once.ucpcomponent.prettier": "workspace:^1.0.0",
     "@oclif/core": "^1.20.4",
     "@types/node": "^18.11.10",
     "eslint": "^8.29.0",
@@ -29,7 +30,7 @@
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
     "build": "pnpm run clean && tsc",
-    "lint": "eslint src/**",
+    "lint": "eslint src/**/*.*ts*",
     "postpack": "rimraf rm -f oclif.manifest.json",
     "posttest": "lint",
     "prepack": "pnpm build && oclif manifest && oclif readme",

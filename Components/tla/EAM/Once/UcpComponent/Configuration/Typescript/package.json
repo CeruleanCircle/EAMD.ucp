@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
-     "typescript": "^4.9.3"
+    "@eamd.ucp/prettier-config-tla.eam.once.ucpcomponent.prettier": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.prettier@*",
+    "typescript": "^4.9.3"
   },
   "files": [
     "src/tsconfig.base.json"

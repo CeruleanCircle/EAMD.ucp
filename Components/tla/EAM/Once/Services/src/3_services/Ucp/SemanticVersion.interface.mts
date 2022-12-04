@@ -1,5 +1,5 @@
 export interface SemanticVersion {
-  major: number;
-  minor: number;
-  patch: number;
+  major: number
+  minor: number
+  patch: number
 }

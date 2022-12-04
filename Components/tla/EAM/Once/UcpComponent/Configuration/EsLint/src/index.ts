@@ -1,5 +1,6 @@
-import rules from "./rules";
 import base from "./configs/base.json";
+import rules from "./rules";
+
 export = {
   rules,
   configs: {

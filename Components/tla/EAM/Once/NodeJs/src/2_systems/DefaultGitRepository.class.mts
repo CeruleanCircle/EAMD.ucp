@@ -1,19 +1,15 @@
-import DefaultFolder from "./File/DefaultFolder.class.mjs";
-import GitRepository from "@eamd.ucp/tla.eam.once.services/src/3_services/Git/GitRepository.interface.mjs";
+import DefaultFolder from "./File/DefaultFolder.class.mjs"
+import GitRepository from "@eamd.ucp/tla.eam.once.services/src/3_services/Git/GitRepository.interface.mjs"
+import { SimpleGit, simpleGit } from "simple-git"
 
-import { simpleGit, SimpleGit } from "simple-git";
-
-export default class DefaultGitRepository
-  extends DefaultFolder
-  implements GitRepository
-{
-  private repoName: string;
+export default class DefaultGitRepository extends DefaultFolder implements GitRepository {
+  private repoName: string
   constructor(name?: string, path?: string) {
-    super(path);
-    this.repoName = name ?? super.name;
+    super(path)
+    this.repoName = name ?? super.name
   }
   get name(): string {
-    return this.repoName;
+    return this.repoName
   }
 
   private get gitRepository(): SimpleGit {
@@ -21,13 +17,13 @@ export default class DefaultGitRepository
       binary: "git",
       maxConcurrentProcesses: 6,
       trimmed: false,
-    });
+    })
   }
   set name(value: string) {
-    this.repoName = value;
+    this.repoName = value
   }
   async removeSubmodule(path: string) {
-    await this.gitRepository.rm(path);
+    await this.gitRepository.rm(path)
   }
 
   async addSubmodule(
@@ -44,25 +40,21 @@ export default class DefaultGitRepository
       name,
       repoPath,
       folderPath,
-    ]);
-    console.log({ response });
+    ])
+    console.log({ response })
 
-    return new DefaultGitRepository(name, folderPath);
+    return new DefaultGitRepository(name, folderPath)
   }
 
   async getSubmodules(): Promise<GitRepository[]> {
     const submoduleInfos = (
-      await this.gitRepository.subModule([
-        "foreach",
-        "--quiet",
-        "echo $name:::$path",
-      ])
+      await this.gitRepository.subModule(["foreach", "--quiet", "echo $name:::$path"])
     )
       .split("\n")
-      .filter((x) => x);
+      .filter((x) => x)
     return submoduleInfos.map((submoduleInfo) => {
-      const [name, path] = submoduleInfo.split(":::");
-      return new DefaultGitRepository(name, path);
-    });
+      const [name, path] = submoduleInfo.split(":::")
+      return new DefaultGitRepository(name, path)
+    })
   }
 }

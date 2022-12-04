@@ -1,3 +1,3 @@
 export interface UcpUnit {
-  name: string;
+  name: string
 }

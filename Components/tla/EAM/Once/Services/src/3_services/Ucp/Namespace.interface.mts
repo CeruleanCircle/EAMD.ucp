@@ -1,8 +1,8 @@
-import Folder from "../File/Folder.interface.mjs";
+import Folder from "../File/Folder.interface.mjs"
 
-export type Namespace = Folder;
+export type Namespace = Folder
 
 export interface NamespaceStatic {
-  fromString: Namespace;
-  new (): Namespace;
+  fromString: Namespace
+  new (): Namespace
 }

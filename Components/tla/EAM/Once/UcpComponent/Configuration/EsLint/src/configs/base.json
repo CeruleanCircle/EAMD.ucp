@@ -1,49 +1,44 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:@typescript-eslint/strict",
-        "turbo",
-        "plugin:prettier/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript"
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict",
+    "turbo",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "es2021",
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/naming-convention": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0
+      }
     ],
-    "plugins": [
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "es2021",
-        "sourceType": "module",
-        "project": "tsconfig.json"
-    },
-    "settings": {
-        "import/resolver": {
-            "typescript": {}
-        }
-    },
-    "rules": {
-        "@typescript-eslint/member-ordering": "error",
-        "@typescript-eslint/naming-convention": "error",
-        "no-multiple-empty-lines": [
-            "error",
-            {
-                "max": 1,
-                "maxEOF": 0
-            }
-        ],
-        "@typescript-eslint/adjacent-overload-signatures": "off"
-    },
-    "overrides": [
-        {
-            "files": [
-                "*.class.mts"
-            ],
-            "rules": {
-                "@typescript-eslint/unbound-method": "off"
-            }
-        }
-    ]
+    "@typescript-eslint/adjacent-overload-signatures": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.class.mts"],
+      "rules": {
+        "@typescript-eslint/unbound-method": "off"
+      }
+    }
+  ]
 }

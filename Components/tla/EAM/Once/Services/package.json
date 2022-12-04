@@ -10,11 +10,12 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": " tsc",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**/*.*ts*"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@eamd.ucp/tla.eam.once.ucpcomponent.prettier": "workspace:^1.0.0",
     "@types/node": "^18.11.10",
     "eslint": "^8.29.0",
     "rimraf": "^3.0.2",
