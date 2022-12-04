@@ -1,4 +1,6 @@
-export default interface File {
+import { UcpUnit } from "../Ucp/UcpUnit.interface.mjs"
+
+export default interface File extends UcpUnit{
     fullPath: string
     get basePath(): string
     get exists(): boolean;

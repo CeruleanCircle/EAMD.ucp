@@ -1,5 +1,5 @@
-import { GitRepositoryConstants } from "./RepositoryConstants.enum.mjs"
+import { GIT_REPOSITORY_CONSTANTS } from "../../3_services/Git/Repository.constants.mjs"
 
 export class NotAGitRepositoryError extends Error {
-	message = GitRepositoryConstants.notARepo
+	message = GIT_REPOSITORY_CONSTANTS.notARepo
 }
