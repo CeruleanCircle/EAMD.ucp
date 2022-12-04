@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@eamd.ucp/tla.eam.once.services": "workspace:^1.0.0",
-    "nodegit": "^0.27.0"
+    "simple-git": "^3.15.1"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",

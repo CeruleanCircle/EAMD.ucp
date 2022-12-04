@@ -125,6 +125,7 @@ importers:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
       '@eamd.ucp/tla.eam.once.github.cli': workspace:^0.0.1
+      '@eamd.ucp/tla.eam.once.nodejs': workspace:^0.0.1
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
       '@oclif/core': ^1.20.4
       '@types/node': ^18.11.10
@@ -135,6 +136,7 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@eamd.ucp/tla.eam.once.github.cli': link:../../Github/Cli
+      '@eamd.ucp/tla.eam.once.nodejs': link:../../NodeJs
       '@oclif/core': 1.20.4
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../Configuration/EsLint

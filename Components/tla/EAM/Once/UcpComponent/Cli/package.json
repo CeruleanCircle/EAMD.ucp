@@ -12,9 +12,9 @@
     "/dist"
   ],
   "dependencies": {
-    "@oclif/core": "^1.20.4",
-
-    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1"
+    "@eamd.ucp/tla.eam.once.github.cli": "workspace:^0.0.1",
+    "@eamd.ucp/tla.eam.once.nodejs": "workspace:^0.0.1",
+    "@oclif/core": "^1.20.4"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",

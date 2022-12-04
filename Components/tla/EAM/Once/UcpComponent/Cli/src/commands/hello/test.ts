@@ -1,4 +1,5 @@
 import {Command} from "@oclif/core"
+import DefaultGitRepository from "@eamd.ucp/tla.eam.once.nodejs/dist/2_systems/DefaultGitRepository.class.mjs"
 
 export default class Test extends Command {
 	static description = "Say hello test"
@@ -17,7 +18,9 @@ hello world! (./src/commands/hello/world.ts)
 		// this.config.root = '/Users/Shared/EAMD.ucp/'
 		await this.config.runHook("github", {id: "my_command"})
 		this.log("hello test! (./src/commands/hello/test.ts)")
-		console.dir(this)
+
+		var gitRepository = new DefaultGitRepository("");
+
 	}
 }
 
