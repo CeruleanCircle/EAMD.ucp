@@ -11,6 +11,7 @@ importers:
   Components/tla/EAM/Once/Cli:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
+      '@eamd.ucp/tla.eam.once.cli.plugin': workspace:^0.0.1
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
       '@oclif/core': ^1.20.4
       '@oclif/plugin-autocomplete': ^1.3.6
@@ -28,6 +29,7 @@ importers:
       sort-compiler-options: ^0.2.0
       typescript: ^4.9.3
     dependencies:
+      '@eamd.ucp/tla.eam.once.cli.plugin': link:../PluginOnce
       '@oclif/core': 1.20.4
       '@oclif/plugin-autocomplete': 1.3.6
       '@oclif/plugin-help': 5.1.19
