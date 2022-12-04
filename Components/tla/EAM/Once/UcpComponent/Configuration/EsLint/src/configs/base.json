@@ -13,9 +13,14 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaVersion": "es2021",
         "sourceType": "module"
     },
+    "settings": {
+        "import/resolver": {
+          "typescript": {}
+        }
+      },
     "rules": {
         "indent": [
             "error",

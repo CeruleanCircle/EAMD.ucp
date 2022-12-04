@@ -8,5 +8,13 @@
     "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
   ],
   "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**"
+  },
+  "devDependencies": {
+    "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
+    "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.3"
   }
 }

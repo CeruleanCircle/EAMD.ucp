@@ -26,6 +26,7 @@
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-turbo": "^0.0.7",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-dependencies": "^2.4.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",

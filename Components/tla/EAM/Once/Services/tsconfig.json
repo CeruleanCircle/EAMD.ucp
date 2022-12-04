@@ -1,0 +1,7 @@
+{
+    "extends": "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript", //
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src"
+    },
+}
