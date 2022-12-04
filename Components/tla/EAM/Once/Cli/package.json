@@ -25,16 +25,12 @@
     "@oclif/plugin-help": "^5.1.19",
     "@oclif/plugin-not-found": "^2.3.9",
     "@oclif/plugin-plugins": "^2.1.7",
-    "@oclif/plugin-which": "^2.2.2",
-    "glob": "^8.0.3",
-    "sort-compiler-options": "^0.2.0"
+    "@oclif/plugin-which": "^2.2.2"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
-    "@types/glob": "^8.0.0",
     "@types/node": "^18.11.10",
-    "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.29.0",
     "oclif": "^3.3.1",
     "rimraf": "^3.0.2",

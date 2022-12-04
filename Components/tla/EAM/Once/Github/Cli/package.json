@@ -18,7 +18,6 @@
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
     "@types/node": "^18.11.10",
-    "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.29.0",
     "oclif": "^3.3.1",
     "rimraf": "^3.0.2",

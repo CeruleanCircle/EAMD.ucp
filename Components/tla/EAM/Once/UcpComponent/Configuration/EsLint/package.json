@@ -24,6 +24,7 @@
     "barrel-generator": "^1.0.9",
     "barrelsby": "^2.5.1",
     "eslint": "^8.29.0",
+    "eslint-config-oclif-typescript": "github:phibar/eslint-config-oclif-typescript",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-turbo": "^0.0.7",
     "eslint-import-resolver-typescript": "^3.5.2",
@@ -36,8 +37,5 @@
   },
   "peerDependencies": {
     "typescript": "^4.9.3"
-  },
-  "dependencies": {
-    "eslint-config-oclif-typescript": "^1.0.3"
   }
 }
