@@ -7,9 +7,7 @@
   "contributors": [
     "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
   ],
-  "bin": {
-    "once": "./bin/run.mjs"
-  },
+
   "type": "module",
   "homepage": "https://github.com/cerulean-circle/once-cli",
   "main": "dist/index.mjs",
@@ -39,15 +37,7 @@
     "typescript": "^4.9.3"
   },
   "oclif": {
-    "bin": "once",
-    "dirname": "once",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins",
-      "@oclif/plugin-autocomplete"
-    ],
-    "topicSeparator": ":"
+    "commands": "./dist/commands"
   },
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
