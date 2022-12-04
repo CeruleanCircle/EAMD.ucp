@@ -1,5 +1,5 @@
-import FileInterface from '@eamd.ucp/tla.eam.once.services/dist/3_services/File/File.interface.mjs'
-import Folder from '@eamd.ucp/tla.eam.once.services/dist/3_services/File/Folder.interface.mjs'
+import FileInterface from '@eamd.ucp/tla.eam.once.services/src/3_services/File/File.interface.mjs'
+import Folder from '@eamd.ucp/tla.eam.once.services/src/3_services/File/Folder.interface.mjs'
 import { lstatSync, readdirSync } from 'fs'
 import { join } from 'path'
 import DefaultFile from './File.class.mjs'
