@@ -2,5 +2,5 @@
 import { join } from 'path'
 
 export const GIT_SUBMODULE_CONSTANTS = {
-    POST_CHECKOUT_PATH: join('hooks', 'post-checkout')
+	postCheckoutPath: join('hooks', 'post-checkout')
 }

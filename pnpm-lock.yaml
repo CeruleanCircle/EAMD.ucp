@@ -87,6 +87,23 @@ importers:
       rimraf: 3.0.2
       typescript: 4.9.3
 
+  Components/tla/EAM/Once/NodeJs:
+    specifiers:
+      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
+      '@eamd.ucp/tla.eam.once.services': workspace:^1.0.0
+      '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
+      '@types/node': ^18.11.10
+      eslint: ^8.29.0
+      typescript: ^4.9.3
+    dependencies:
+      '@eamd.ucp/tla.eam.once.services': link:../Services
+    devDependencies:
+      '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../UcpComponent/Configuration/EsLint
+      '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../UcpComponent/Configuration/Typescript
+      '@types/node': 18.11.10
+      eslint: 8.29.0
+      typescript: 4.9.3
+
   Components/tla/EAM/Once/Services:
     specifiers:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*
@@ -141,6 +158,7 @@ importers:
       eslint-plugin-dependencies: ^2.4.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
+      eslint-plugin-sort-class-members: ^1.16.0
       eslint-plugin-unused-imports: ^2.0.0
       prettier: ^2.8.0
       rimraf: ^3.0.2
@@ -159,6 +177,7 @@ importers:
       eslint-plugin-dependencies: 2.4.0
       eslint-plugin-import: 2.26.0_n542pvy4d6vz5nffbpq5koul4e
       eslint-plugin-prettier: 4.2.1_nrhoyyjffvfyk4vtlt5destxgm
+      eslint-plugin-sort-class-members: 1.16.0_eslint@8.29.0
       eslint-plugin-unused-imports: 2.0.0_sklehmazzizroldsy2klx2uism
       prettier: 2.8.0
       rimraf: 3.0.2
@@ -1889,6 +1908,15 @@ packages:
       eslint-config-prettier: 8.5.0_eslint@8.29.0
       prettier: 2.8.0
       prettier-linter-helpers: 1.0.0
+    dev: true
+
+  /eslint-plugin-sort-class-members/1.16.0_eslint@8.29.0:
+    resolution: {integrity: sha512-8l0IqUmoupk9PvO5D4I5zJqirVe9sax5Hpfv9xQmnrSpLYkc8BSYGnUjuHGMSSe4jKuC73NIr38kQv1tPbO+Xg==}
+    engines: {node: '>=4.0.0'}
+    peerDependencies:
+      eslint: '>=0.8.0'
+    dependencies:
+      eslint: 8.29.0
     dev: true
 
   /eslint-plugin-turbo/0.0.7_eslint@8.29.0:

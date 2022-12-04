@@ -1,0 +1,28 @@
+{
+  "name": "@eamd.ucp/tla.eam.once.nodejs",
+  "version": "0.0.1",
+  "description": "",
+  "license": "AGPL-3.0",
+  "contributors": [
+    "phibar <philipp@ceruleancircle.com> (https://ceruleancircle.com)",
+    "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
+  ],
+  "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
+    "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
+    "@types/node": "^18.11.10",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**"
+  },
+  "dependencies": {
+    "@eamd.ucp/tla.eam.once.services": "workspace:^1.0.0"
+  }
+}
