@@ -36,5 +36,8 @@
   },
   "peerDependencies": {
     "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "eslint-config-oclif-typescript": "^1.0.3"
   }
 }
