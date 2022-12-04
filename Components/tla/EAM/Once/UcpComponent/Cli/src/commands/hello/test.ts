@@ -18,3 +18,5 @@ hello world! (./src/commands/hello/world.ts)
 		this.log('hello test! (./src/commands/hello/test.ts)')
 	}
 }
+
+export {}

@@ -11,6 +11,9 @@
   "files": [
     "/dist"
   ],
+  "dependencies": {
+    "@eamd.ucp/tla.eam.once.services": "workspace:^1.0.0"
+  },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
@@ -21,8 +24,5 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint src/**"
-  },
-  "dependencies": {
-    "@eamd.ucp/tla.eam.once.services": "workspace:^1.0.0"
   }
 }

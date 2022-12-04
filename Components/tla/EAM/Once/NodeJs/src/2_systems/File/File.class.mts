@@ -1,3 +1,4 @@
+// import File from '@eamd.ucp/tla.eam.once.services/dist/3_services/File/File.interface.mjs'
 import File from '@eamd.ucp/tla.eam.once.services/dist/3_services/File/File.interface.mjs'
 import { existsSync, writeFileSync, readFileSync } from 'fs'
 import { basename, dirname, extname } from 'path'

@@ -109,12 +109,14 @@ importers:
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': workspace:*
       '@types/node': ^18.11.10
       eslint: ^8.29.0
+      rimraf: ^3.0.2
       typescript: ^4.9.3
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../UcpComponent/Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../UcpComponent/Configuration/Typescript
       '@types/node': 18.11.10
       eslint: 8.29.0
+      rimraf: 3.0.2
       typescript: 4.9.3
 
   Components/tla/EAM/Once/UcpComponent/Cli:
@@ -131,10 +133,10 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@eamd.ucp/tla.eam.once.github.cli': link:../../Github/Cli
+      '@oclif/core': 1.20.4
     devDependencies:
       '@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint': link:../Configuration/EsLint
       '@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript': link:../Configuration/Typescript
-      '@oclif/core': github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22
       '@types/node': 18.11.10
       '@typescript-eslint/parser': 5.45.0_s5ps7njkmjlaqajutnox5ntcla
       eslint: 8.29.0
@@ -528,8 +530,8 @@ packages:
       - supports-color
     dev: false
 
-  /@oclif/plugin-warn-if-update-available/2.0.14:
-    resolution: {integrity: sha512-gEgFZuNtFx3yPfSuxhAm9F8nLZ4+UnBJhbjTywY0Cvrqvd+OvKvo6PfwRm0lWmH4EgWwQEq39pfaks1fg+y1gw==}
+  /@oclif/plugin-warn-if-update-available/2.0.15:
+    resolution: {integrity: sha512-HC3ZNNH2V1m3LTgzc8+5ISpyv0bmZwngANLzc1rM3a0kxUiH1jSagZU5XWBF7B4Wh1VIOFkR96y4D0Dwh6KNfw==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@oclif/core': 1.20.4
@@ -3617,7 +3619,7 @@ packages:
       '@oclif/core': 1.20.4
       '@oclif/plugin-help': 5.1.19
       '@oclif/plugin-not-found': 2.3.9
-      '@oclif/plugin-warn-if-update-available': 2.0.14
+      '@oclif/plugin-warn-if-update-available': 2.0.15
       aws-sdk: 2.1267.0
       concurrently: 7.6.0
       debug: 4.3.4
@@ -5190,42 +5192,6 @@ packages:
       strip-ansi: 3.0.1
       taketalk: 1.0.0
       wrap-ansi: 2.1.0
-    dev: true
-
-  github.com/phibar/core/1e7dd184efe1416952b3762b7d0896812a4e2c22:
-    resolution: {registry: https://registry.npmjs.org/, tarball: https://codeload.github.com/phibar/core/tar.gz/1e7dd184efe1416952b3762b7d0896812a4e2c22}
-    name: '@oclif/core'
-    version: 1.20.4
-    engines: {node: '>=14.0.0'}
-    dependencies:
-      '@oclif/linewrap': 1.0.0
-      '@oclif/screen': 3.0.3
-      ansi-escapes: 4.3.2
-      ansi-styles: 4.3.0
-      cardinal: 2.1.1
-      chalk: 4.1.2
-      clean-stack: 3.0.1
-      cli-progress: 3.11.2
-      debug: 4.3.4_supports-color@8.1.1
-      ejs: 3.1.8
-      fs-extra: 9.1.0
-      get-package-type: 0.1.0
-      globby: 11.1.0
-      hyperlinker: 1.0.0
-      indent-string: 4.0.0
-      is-wsl: 2.2.0
-      js-yaml: 3.14.1
-      natural-orderby: 2.0.3
-      object-treeify: 1.1.33
-      password-prompt: 1.1.2
-      semver: 7.3.8
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      supports-color: 8.1.1
-      supports-hyperlinks: 2.3.0
-      tslib: 2.4.1
-      widest-line: 3.1.0
-      wrap-ansi: 7.0.0
     dev: true
 
   github.com/phibar/eslint-config-oclif-typescript/dd9e7c8e72b52a1b6a3cdbd684add125e3b98f36_s5ps7njkmjlaqajutnox5ntcla:

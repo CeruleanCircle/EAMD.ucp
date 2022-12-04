@@ -23,13 +23,12 @@
   },
   "oclif": {
     "hooks": {
-      "github": "./dist/hooks/github",
-      "init": "./dist/hooks/init/myhook"
+      "github": "./dist/hooks/github/Github"
     }
   },
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
-    "build": "tsc",
+    "build": "pnpm run clean && tsc",
     "lint": "eslint src/**",
     "postpack": "rimraf rm -f oclif.manifest.json",
     "posttest": "lint",

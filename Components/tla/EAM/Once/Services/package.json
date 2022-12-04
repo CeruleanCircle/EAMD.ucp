@@ -8,7 +8,8 @@
     "mdonges <marcel@ceruleancircle.com> (https://ceruleancircle.com)"
   ],
   "scripts": {
-    "build": "tsc",
+    "clean":"rimraf dist",
+    "build": "pnpm run clean && tsc",
     "lint": "eslint src/**"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript": "workspace:*",
     "@types/node": "^18.11.10",
     "eslint": "^8.29.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   }
 }
