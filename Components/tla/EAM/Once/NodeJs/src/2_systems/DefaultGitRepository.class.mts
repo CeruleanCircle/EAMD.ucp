@@ -19,9 +19,11 @@ export default class DefaultGitRepository extends DefaultFolder implements GitRe
       trimmed: false,
     })
   }
+
   set name(value: string) {
     this.repoName = value
   }
+
   async removeSubmodule(path: string) {
     await this.gitRepository.rm(path)
   }

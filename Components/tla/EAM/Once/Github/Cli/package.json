@@ -22,11 +22,7 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   },
-  "oclif": {
-    "hooks": {
-      "github": "./dist/hooks/github/Github"
-    }
-  },
+  "oclif": {},
   "scripts": {
     "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
     "build": "pnpm run clean && tsc",
