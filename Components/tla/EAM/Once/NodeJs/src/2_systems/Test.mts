@@ -48,7 +48,10 @@ console.log(resolve("./Once.class.mts"));
 
 
 const program = TJS.getProgramFromFiles(
-    ["/Users/Shared/EAMD.ucp/Components/tla/EAM/Once/NodeJs/src/2_systems/Once.class.mts"],
+    [
+        // "/Users/Shared/EAMD.ucp/Components/tla/EAM/Once/NodeJs/src/2_systems/Once.class.mts",
+        "/Users/Shared/EAMD.ucp/Components/tla/EAM/Once/NodeJs/src/2_systems/Validator/AjvValidator.class.mts"
+],
     config.options,
     "/Users/Shared/EAMD.ucp"
   );
@@ -58,28 +61,31 @@ const program = TJS.getProgramFromFiles(
 };
 
 
-  const schema = TJS.generateSchema(program, "OnceNodeJsModel", settings);
-  import addFormats from "ajv-formats"
-  import Ajv from "ajv"
-  const ajv = new Ajv()
+//   const schema = TJS.generateSchema(program, "OnceNodeJsModel", settings);
+  const schema2 = TJS.generateSchema(program, "AjvValidator", settings);
+  console.log(JSON.stringify(schema2));
+  
+//   import addFormats from "ajv-formats"
+//   import Ajv from "ajv"
+//   const ajv = new Ajv()
 
 
-// import * as draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json"
-// ajv.addMetaSchema(draft7MetaSchema)
-if(!schema) throw new Error("Schema is null")
-// ajv.addSchema(schema,"schema")
-addFormats(ajv)
+// // import * as draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json"
+// // ajv.addMetaSchema(draft7MetaSchema)
+// if(!schema) throw new Error("Schema is null")
+// // ajv.addSchema(schema,"schema")
+// addFormats(ajv)
 
-var fooo = JSON.parse(JSON.stringify({
-    creationDate: new Date(),
-    mode: Mode.BOOTING,
-    state: State.DISCOVER,
-    env: process.env,
-}))
+// var fooo = JSON.parse(JSON.stringify({
+//     creationDate: new Date(),
+//     mode: Mode.BOOTING,
+//     state: State.DISCOVER,
+//     env: process.env,
+// }))
 
-console.log(fooo);
+// // console.log(fooo);
 
-var validate = ajv.validate(schema,fooo )
+// var validate = ajv.validate(schema,fooo )
 
-console.  log(validate)
-console.dir(ajv.errors)
+// // console.  log(validate)
+// // console.dir(ajv.errors)

@@ -92,7 +92,7 @@ import { dir } from "console"
 import { SchemaOf, date, mixed, object } from "yup"
 import yupToJsonSchema from "@sodaru/yup-to-json-schema"
 import { generateSchema } from "typescript-json-schema";
-import { AjvValidtor } from "./Validator/AjvValidator.class.mjs"
+import { AjvValidator } from "./Validator/AjvValidator.class.mjs"
 interface OnceNodeJsModel extends OnceModel {
   env: NodeJS.ProcessEnv
 }
@@ -166,7 +166,7 @@ class OnceNodeJs implements Once<OnceNodeJsModel, string> {
     }
   }`
 
-  modelValidator = new AjvValidtor<OnceNodeJsModel>()
+  modelValidator = new AjvValidator<OnceNodeJsModel>()
 
   start(): Promise<this> {
     return new Promise((resolve) => {

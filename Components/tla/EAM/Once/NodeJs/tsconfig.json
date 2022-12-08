@@ -1,6 +1,7 @@
 {
     "extends": "@eamd.ucp/tla.eam.once.ucpcomponent.configuration.typescript", //
     "compilerOptions": {
+        "target": "ES2022",
         "outDir": "./dist",
         "rootDir": "./src",
         "resolveJsonModule": true

@@ -1,0 +1,1472 @@
+{
+	"type": "object",
+	"properties": {
+		"ajv": {
+			"$ref": "#/definitions/default"
+		}
+	},
+	"required": ["ajv"],
+	"definitions": {
+		"default": {
+			"type": "object",
+			"properties": {
+				"opts": {
+					"$ref": "#/definitions/InstanceOptions"
+				},
+				"errors": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/ErrorObject<string,Record<string,any>,unknown>"
+						}
+					}, {
+						"type": "null"
+					}]
+				},
+				"logger": {
+					"$ref": "#/definitions/Logger"
+				},
+				"scope": {
+					"$ref": "#/definitions/ValueScope"
+				},
+				"schemas": {
+					"$ref": "#/definitions/{[x:string]:SchemaEnv|undefined;}"
+				},
+				"refs": {
+					"$ref": "#/definitions/{[x:string]:string|SchemaEnv|undefined;}"
+				},
+				"formats": {
+					"$ref": "#/definitions/{[x:string]:AddedFormat|undefined;}"
+				},
+				"RULES": {
+					"$ref": "#/definitions/ValidationRules"
+				},
+				"_compilations": {
+					"$ref": "#/definitions/Set<SchemaEnv>"
+				},
+				"_loading": {},
+				"_cache": {},
+				"_metaOpts": {},
+				"_removeAllSchemas": {},
+				"_checkUnique": {},
+				"_compileSchemaEnv": {},
+				"_compileMetaSchema": {}
+			},
+			"required": ["RULES", "_cache", "_checkUnique", "_compilations", "_compileMetaSchema", "_compileSchemaEnv", "_loading", "_metaOpts", "_removeAllSchemas", "formats", "logger", "opts", "refs", "schemas", "scope"]
+		},
+		"InstanceOptions": {
+			"allOf": [{
+				"$ref": "#/definitions/CurrentOptions"
+			}, {
+				"$ref": "#/definitions/DeprecatedOptions"
+			}, {
+				"$ref": "#/definitions/{meta:NonNullable<boolean|SchemaObject|undefined>;strictSchema:NonNullable<boolean|\"log\"|undefined>;strictNumbers:NonNullable<boolean|\"log\"|undefined>;strictTypes:NonNullable<boolean|\"log\"|undefined>;strictTuples:NonNullable<boolean|\"log\"|undefined>;strictRequired:NonNullable<boolean|\"log\"|undefined>;inlineRefs:NonNullable<number|boolean|undefined>;loopRequired:number;loopEnum:number;messages:NonNullable<boolean|undefined>;schemaId:NonNullable<\"$id\"|\"id\"|undefined>;addUsedSchema:NonNullable<boolean|undefined>;validateSchema:NonNullable<boolean|\"log\"|undefined>;validateFormats:NonNullable<boolean|undefined>;int32range:NonNullable<boolean|undefined>;unicodeRegExp:NonNullable<boolean|undefined>;uriResolver:UriResolver;}"
+			}, {
+				"type": "object",
+				"properties": {
+					"code": {
+						"$ref": "#/definitions/InstanceCodeOptions"
+					}
+				},
+				"required": ["code"]
+			}]
+		},
+		"CurrentOptions": {
+			"type": "object",
+			"properties": {
+				"strict": {
+					"enum": [false, "log", true]
+				},
+				"strictSchema": {
+					"enum": [false, "log", true]
+				},
+				"strictNumbers": {
+					"enum": [false, "log", true]
+				},
+				"strictTypes": {
+					"enum": [false, "log", true]
+				},
+				"strictTuples": {
+					"enum": [false, "log", true]
+				},
+				"strictRequired": {
+					"enum": [false, "log", true]
+				},
+				"allowMatchingProperties": {
+					"type": "boolean"
+				},
+				"allowUnionTypes": {
+					"type": "boolean"
+				},
+				"validateFormats": {
+					"type": "boolean"
+				},
+				"$data": {
+					"type": "boolean"
+				},
+				"allErrors": {
+					"type": "boolean"
+				},
+				"verbose": {
+					"type": "boolean"
+				},
+				"discriminator": {
+					"type": "boolean"
+				},
+				"unicodeRegExp": {
+					"type": "boolean"
+				},
+				"timestamp": {
+					"enum": ["date", "string"],
+					"type": "string"
+				},
+				"parseDate": {
+					"type": "boolean"
+				},
+				"allowDate": {
+					"type": "boolean"
+				},
+				"$comment": {
+					"anyOf": [{
+						"enum": [true],
+						"type": "boolean"
+					}, {
+						"type": "object"
+					}]
+				},
+				"formats": {
+					"$ref": "#/definitions/{[x:string]:Format|undefined;}"
+				},
+				"keywords": {
+					"type": "array",
+					"items": {
+						"anyOf": [{
+							"$ref": "#/definitions/CodeKeywordDefinition"
+						}, {
+							"$ref": "#/definitions/FuncKeywordDefinition"
+						}, {
+							"$ref": "#/definitions/MacroKeywordDefinition"
+						}, {
+							"type": "string"
+						}]
+					}
+				},
+				"schemas": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/AnySchema"
+						}
+					}, {
+						"$ref": "#/definitions/{[x:string]:AnySchema|undefined;}"
+					}]
+				},
+				"logger": {
+					"anyOf": [{
+						"$ref": "#/definitions/Logger"
+					}, {
+						"enum": [false],
+						"type": "boolean"
+					}]
+				},
+				"loadSchema": {
+					"type": "object"
+				},
+				"removeAdditional": {
+					"enum": ["all", "failing", false, true]
+				},
+				"useDefaults": {
+					"enum": ["empty", false, true]
+				},
+				"coerceTypes": {
+					"enum": ["array", false, true]
+				},
+				"next": {
+					"type": "boolean"
+				},
+				"unevaluated": {
+					"type": "boolean"
+				},
+				"dynamicRef": {
+					"type": "boolean"
+				},
+				"schemaId": {
+					"enum": ["$id", "id"],
+					"type": "string"
+				},
+				"jtd": {
+					"type": "boolean"
+				},
+				"meta": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"defaultMeta": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}, {
+						"type": "string"
+					}]
+				},
+				"validateSchema": {
+					"enum": [false, "log", true]
+				},
+				"addUsedSchema": {
+					"type": "boolean"
+				},
+				"inlineRefs": {
+					"type": ["number", "boolean"]
+				},
+				"passContext": {
+					"type": "boolean"
+				},
+				"loopRequired": {
+					"type": "number"
+				},
+				"loopEnum": {
+					"type": "number"
+				},
+				"ownProperties": {
+					"type": "boolean"
+				},
+				"multipleOfPrecision": {
+					"type": "number"
+				},
+				"int32range": {
+					"type": "boolean"
+				},
+				"messages": {
+					"type": "boolean"
+				},
+				"code": {
+					"$ref": "#/definitions/CodeOptions"
+				},
+				"uriResolver": {
+					"$ref": "#/definitions/UriResolver"
+				}
+			}
+		},
+		"{[x:string]:Format|undefined;}": {
+			"type": "object"
+		},
+		"CodeKeywordDefinition": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "object"
+				},
+				"trackErrors": {
+					"type": "boolean"
+				},
+				"keyword": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}, {
+						"type": "string"
+					}]
+				},
+				"type": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"schemaType": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"allowUndefined": {
+					"type": "boolean"
+				},
+				"$data": {
+					"type": "boolean"
+				},
+				"implements": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"before": {
+					"type": "string"
+				},
+				"post": {
+					"type": "boolean"
+				},
+				"metaSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}]
+				},
+				"validateSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/ValidateFunction<any>"
+					}, {
+						"$ref": "#/definitions/AsyncValidateFunction<any>"
+					}]
+				},
+				"dependencies": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"error": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				},
+				"$dataError": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				}
+			},
+			"required": ["code", "keyword"]
+		},
+		"SchemaObject": {
+			"type": "object",
+			"additionalProperties": {},
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"$id": {
+					"type": "string"
+				},
+				"$schema": {
+					"type": "string"
+				},
+				"$async": {
+					"enum": [false],
+					"type": "boolean"
+				}
+			}
+		},
+		"AsyncSchema": {
+			"type": "object",
+			"properties": {
+				"$async": {
+					"type": "boolean",
+					"enum": [true]
+				},
+				"id": {
+					"type": "string"
+				},
+				"$id": {
+					"type": "string"
+				},
+				"$schema": {
+					"type": "string"
+				}
+			},
+			"required": ["$async"]
+		},
+		"ValidateFunction<any>": {
+			"type": "object",
+			"properties": {
+				"errors": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/ErrorObject<string,Record<string,any>,unknown>"
+						}
+					}, {
+						"type": "null"
+					}]
+				},
+				"evaluated": {
+					"$ref": "#/definitions/Evaluated"
+				},
+				"schema": {
+					"$ref": "#/definitions/AnySchema"
+				},
+				"schemaEnv": {
+					"$ref": "#/definitions/SchemaEnv"
+				},
+				"source": {
+					"$ref": "#/definitions/SourceCode"
+				}
+			},
+			"required": ["schema", "schemaEnv"]
+		},
+		"ErrorObject<string,Record<string,any>,unknown>": {
+			"type": "object",
+			"properties": {
+				"keyword": {
+					"type": "string"
+				},
+				"instancePath": {
+					"type": "string"
+				},
+				"schemaPath": {
+					"type": "string"
+				},
+				"params": {
+					"$ref": "#/definitions/Record<string,any>"
+				},
+				"propertyName": {
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				},
+				"schema": {},
+				"parentSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}]
+				},
+				"data": {}
+			},
+			"required": ["instancePath", "keyword", "params", "schemaPath"]
+		},
+		"Record<string,any>": {
+			"type": "object"
+		},
+		"Evaluated": {
+			"type": "object",
+			"properties": {
+				"props": {
+					"anyOf": [{
+						"$ref": "#/definitions/{[x:string]:true|undefined;}"
+					}, {
+						"enum": [true],
+						"type": "boolean"
+					}]
+				},
+				"items": {
+					"anyOf": [{
+						"enum": [true],
+						"type": "boolean"
+					}, {
+						"type": "number"
+					}]
+				},
+				"dynamicProps": {
+					"type": "boolean"
+				},
+				"dynamicItems": {
+					"type": "boolean"
+				}
+			},
+			"required": ["dynamicItems", "dynamicProps"]
+		},
+		"{[x:string]:true|undefined;}": {
+			"type": "object"
+		},
+		"AnySchema": {
+			"anyOf": [{
+				"$ref": "#/definitions/SchemaObject"
+			}, {
+				"$ref": "#/definitions/AsyncSchema"
+			}, {
+				"type": "boolean"
+			}]
+		},
+		"SchemaEnv": {
+			"type": "object",
+			"properties": {
+				"schema": {
+					"$ref": "#/definitions/AnySchema"
+				},
+				"schemaId": {
+					"enum": ["$id", "id"],
+					"type": "string"
+				},
+				"root": {
+					"$ref": "#/definitions/SchemaEnv"
+				},
+				"baseId": {
+					"type": "string"
+				},
+				"schemaPath": {
+					"type": "string"
+				},
+				"localRefs": {
+					"$ref": "#/definitions/LocalRefs"
+				},
+				"meta": {
+					"type": "boolean"
+				},
+				"$async": {
+					"type": "boolean"
+				},
+				"refs": {
+					"$ref": "#/definitions/SchemaRefs"
+				},
+				"dynamicAnchors": {
+					"$ref": "#/definitions/{[x:string]:true|undefined;}_1"
+				},
+				"validate": {
+					"anyOf": [{
+						"$ref": "#/definitions/ValidateFunction<any>"
+					}, {
+						"$ref": "#/definitions/AsyncValidateFunction<any>"
+					}]
+				},
+				"validateName": {
+					"$ref": "#/definitions/ValueScopeName"
+				},
+				"serialize": {
+					"type": "object"
+				},
+				"serializeName": {
+					"$ref": "#/definitions/ValueScopeName"
+				},
+				"parse": {
+					"type": "object"
+				},
+				"parseName": {
+					"$ref": "#/definitions/ValueScopeName"
+				}
+			},
+			"required": ["baseId", "dynamicAnchors", "refs", "root", "schema"]
+		},
+		"LocalRefs": {
+			"type": "object"
+		},
+		"SchemaRefs": {
+			"type": "object"
+		},
+		"{[x:string]:true|undefined;}_1": {
+			"type": "object"
+		},
+		"AsyncValidateFunction<any>": {
+			"type": "object",
+			"properties": {
+				"$async": {
+					"type": "boolean",
+					"enum": [true]
+				},
+				"errors": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/ErrorObject<string,Record<string,any>,unknown>"
+						}
+					}, {
+						"type": "null"
+					}]
+				},
+				"evaluated": {
+					"$ref": "#/definitions/Evaluated"
+				},
+				"schema": {
+					"$ref": "#/definitions/AnySchema"
+				},
+				"schemaEnv": {
+					"$ref": "#/definitions/SchemaEnv"
+				},
+				"source": {
+					"$ref": "#/definitions/SourceCode"
+				}
+			},
+			"required": ["$async", "schema", "schemaEnv"]
+		},
+		"SourceCode": {
+			"type": "object",
+			"properties": {
+				"validateName": {
+					"$ref": "#/definitions/ValueScopeName"
+				},
+				"validateCode": {
+					"type": "string"
+				},
+				"scopeValues": {
+					"$ref": "#/definitions/ScopeValueSets"
+				},
+				"evaluated": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}]
+				}
+			},
+			"required": ["scopeValues", "validateCode", "validateName"]
+		},
+		"ValueScopeName": {
+			"type": "object",
+			"properties": {
+				"prefix": {
+					"type": "string"
+				},
+				"value": {
+					"$ref": "#/definitions/NameValue"
+				},
+				"scopePath": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}]
+				},
+				"str": {
+					"type": "string"
+				},
+				"names": {
+					"$ref": "#/definitions/UsedNames"
+				}
+			},
+			"required": ["names", "prefix", "str"]
+		},
+		"NameValue": {
+			"type": "object",
+			"properties": {
+				"ref": {},
+				"key": {},
+				"code": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}]
+				}
+			},
+			"required": ["ref"]
+		},
+		"Name": {
+			"type": "object",
+			"properties": {
+				"str": {
+					"type": "string"
+				},
+				"names": {
+					"$ref": "#/definitions/UsedNames"
+				}
+			},
+			"required": ["names", "str"]
+		},
+		"UsedNames": {
+			"type": "object"
+		},
+		"_Code": {
+			"type": "object",
+			"properties": {
+				"_items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CodeItem"
+					}
+				},
+				"_str": {},
+				"_names": {},
+				"str": {
+					"type": "string"
+				},
+				"names": {
+					"$ref": "#/definitions/UsedNames"
+				}
+			},
+			"required": ["_items", "names", "str"]
+		},
+		"CodeItem": {
+			"anyOf": [{
+				"$ref": "#/definitions/Name"
+			}, {
+				"type": ["null", "string", "number", "boolean"]
+			}]
+		},
+		"ScopeValueSets": {
+			"type": "object"
+		},
+		"KeywordErrorDefinition": {
+			"type": "object",
+			"properties": {
+				"message": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}, {
+						"type": ["string", "object"]
+					}]
+				},
+				"params": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}, {
+						"type": "object"
+					}]
+				}
+			},
+			"required": ["message"]
+		},
+		"FuncKeywordDefinition": {
+			"type": "object",
+			"properties": {
+				"validate": {
+					"anyOf": [{
+						"$ref": "#/definitions/DataValidateFunction"
+					}, {
+						"$ref": "#/definitions/SchemaValidateFunction"
+					}]
+				},
+				"compile": {
+					"type": "object"
+				},
+				"schema": {
+					"type": "boolean"
+				},
+				"modifying": {
+					"type": "boolean"
+				},
+				"async": {
+					"type": "boolean"
+				},
+				"valid": {
+					"type": "boolean"
+				},
+				"errors": {
+					"enum": [false, "full", true]
+				},
+				"keyword": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}, {
+						"type": "string"
+					}]
+				},
+				"type": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"schemaType": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"allowUndefined": {
+					"type": "boolean"
+				},
+				"$data": {
+					"type": "boolean"
+				},
+				"implements": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"before": {
+					"type": "string"
+				},
+				"post": {
+					"type": "boolean"
+				},
+				"metaSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}]
+				},
+				"validateSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/ValidateFunction<any>"
+					}, {
+						"$ref": "#/definitions/AsyncValidateFunction<any>"
+					}]
+				},
+				"dependencies": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"error": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				},
+				"$dataError": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				}
+			},
+			"required": ["keyword"]
+		},
+		"DataValidateFunction": {
+			"type": "object",
+			"properties": {
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Partial<ErrorObject<string,Record<string,any>,unknown>>"
+					}
+				}
+			}
+		},
+		"Partial<ErrorObject<string,Record<string,any>,unknown>>": {
+			"type": "object",
+			"properties": {
+				"keyword": {
+					"type": "string"
+				},
+				"instancePath": {
+					"type": "string"
+				},
+				"schemaPath": {
+					"type": "string"
+				},
+				"params": {
+					"$ref": "#/definitions/Record<string,any>"
+				},
+				"propertyName": {
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				},
+				"schema": {},
+				"parentSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}]
+				},
+				"data": {}
+			}
+		},
+		"SchemaValidateFunction": {
+			"type": "object",
+			"properties": {
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Partial<ErrorObject<string,Record<string,any>,unknown>>"
+					}
+				}
+			}
+		},
+		"MacroKeywordDefinition": {
+			"type": "object",
+			"properties": {
+				"macro": {
+					"type": "object"
+				},
+				"validate": {
+					"anyOf": [{
+						"$ref": "#/definitions/DataValidateFunction"
+					}, {
+						"$ref": "#/definitions/SchemaValidateFunction"
+					}]
+				},
+				"compile": {
+					"type": "object"
+				},
+				"schema": {
+					"type": "boolean"
+				},
+				"modifying": {
+					"type": "boolean"
+				},
+				"async": {
+					"type": "boolean"
+				},
+				"valid": {
+					"type": "boolean"
+				},
+				"errors": {
+					"enum": [false, "full", true]
+				},
+				"keyword": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}, {
+						"type": "string"
+					}]
+				},
+				"type": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"schemaType": {
+					"anyOf": [{
+						"type": "array",
+						"items": {
+							"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+							"type": "string"
+						}
+					}, {
+						"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+						"type": "string"
+					}]
+				},
+				"allowUndefined": {
+					"type": "boolean"
+				},
+				"$data": {
+					"type": "boolean"
+				},
+				"implements": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"before": {
+					"type": "string"
+				},
+				"post": {
+					"type": "boolean"
+				},
+				"metaSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/SchemaObject"
+					}, {
+						"$ref": "#/definitions/AsyncSchema"
+					}]
+				},
+				"validateSchema": {
+					"anyOf": [{
+						"$ref": "#/definitions/ValidateFunction<any>"
+					}, {
+						"$ref": "#/definitions/AsyncValidateFunction<any>"
+					}]
+				},
+				"dependencies": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"error": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				},
+				"$dataError": {
+					"$ref": "#/definitions/KeywordErrorDefinition"
+				}
+			},
+			"required": ["keyword", "macro"]
+		},
+		"{[x:string]:AnySchema|undefined;}": {
+			"type": "object"
+		},
+		"Logger": {
+			"type": "object"
+		},
+		"CodeOptions": {
+			"type": "object",
+			"properties": {
+				"es5": {
+					"type": "boolean"
+				},
+				"esm": {
+					"type": "boolean"
+				},
+				"lines": {
+					"type": "boolean"
+				},
+				"optimize": {
+					"type": ["number", "boolean"]
+				},
+				"formats": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}]
+				},
+				"source": {
+					"type": "boolean"
+				},
+				"process": {
+					"type": "object"
+				},
+				"regExp": {
+					"$ref": "#/definitions/RegExpEngine"
+				}
+			}
+		},
+		"RegExpEngine": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				}
+			},
+			"required": ["code"]
+		},
+		"UriResolver": {
+			"type": "object"
+		},
+		"DeprecatedOptions": {
+			"type": "object",
+			"properties": {
+				"ignoreKeywordsWithRef": {
+					"type": "boolean"
+				},
+				"jsPropertySyntax": {
+					"type": "boolean"
+				},
+				"unicode": {
+					"type": "boolean"
+				}
+			}
+		},
+		"{meta:NonNullable<boolean|SchemaObject|undefined>;strictSchema:NonNullable<boolean|\"log\"|undefined>;strictNumbers:NonNullable<boolean|\"log\"|undefined>;strictTypes:NonNullable<boolean|\"log\"|undefined>;strictTuples:NonNullable<boolean|\"log\"|undefined>;strictRequired:NonNullable<boolean|\"log\"|undefined>;inlineRefs:NonNullable<number|boolean|undefined>;loopRequired:number;loopEnum:number;messages:NonNullable<boolean|undefined>;schemaId:NonNullable<\"$id\"|\"id\"|undefined>;addUsedSchema:NonNullable<boolean|undefined>;validateSchema:NonNullable<boolean|\"log\"|undefined>;validateFormats:NonNullable<boolean|undefined>;int32range:NonNullable<boolean|undefined>;unicodeRegExp:NonNullable<boolean|undefined>;uriResolver:UriResolver;}": {
+			"type": "object",
+			"properties": {
+				"meta": {
+					"$ref": "#/definitions/NonNullable<boolean|SchemaObject|undefined>"
+				},
+				"strictSchema": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"strictNumbers": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"strictTypes": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"strictTuples": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"strictRequired": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"inlineRefs": {
+					"$ref": "#/definitions/NonNullable<number|boolean|undefined>"
+				},
+				"loopRequired": {
+					"type": "number"
+				},
+				"loopEnum": {
+					"type": "number"
+				},
+				"messages": {
+					"$ref": "#/definitions/NonNullable<boolean|undefined>"
+				},
+				"schemaId": {
+					"$ref": "#/definitions/NonNullable<\"$id\"|\"id\"|undefined>"
+				},
+				"addUsedSchema": {
+					"$ref": "#/definitions/NonNullable<boolean|undefined>"
+				},
+				"validateSchema": {
+					"$ref": "#/definitions/NonNullable<boolean|\"log\"|undefined>"
+				},
+				"validateFormats": {
+					"$ref": "#/definitions/NonNullable<boolean|undefined>"
+				},
+				"int32range": {
+					"$ref": "#/definitions/NonNullable<boolean|undefined>"
+				},
+				"unicodeRegExp": {
+					"$ref": "#/definitions/NonNullable<boolean|undefined>"
+				},
+				"uriResolver": {
+					"$ref": "#/definitions/UriResolver"
+				}
+			},
+			"required": ["addUsedSchema", "inlineRefs", "int32range", "loopEnum", "loopRequired", "messages", "meta", "schemaId", "strictNumbers", "strictRequired", "strictSchema", "strictTuples", "strictTypes", "unicodeRegExp", "uriResolver", "validateFormats", "validateSchema"]
+		},
+		"NonNullable<boolean|SchemaObject|undefined>": {
+			"anyOf": [{
+				"$ref": "#/definitions/SchemaObject"
+			}, {
+				"type": "boolean"
+			}]
+		},
+		"NonNullable<boolean|\"log\"|undefined>": {
+			"enum": [false, "log", true]
+		},
+		"NonNullable<number|boolean|undefined>": {
+			"type": ["number", "boolean"]
+		},
+		"NonNullable<boolean|undefined>": {
+			"type": "boolean"
+		},
+		"NonNullable<\"$id\"|\"id\"|undefined>": {
+			"enum": ["$id", "id"],
+			"type": "string"
+		},
+		"InstanceCodeOptions": {
+			"type": "object",
+			"properties": {
+				"regExp": {
+					"$ref": "#/definitions/RegExpEngine"
+				},
+				"optimize": {
+					"type": "number"
+				},
+				"es5": {
+					"type": "boolean"
+				},
+				"esm": {
+					"type": "boolean"
+				},
+				"lines": {
+					"type": "boolean"
+				},
+				"formats": {
+					"anyOf": [{
+						"$ref": "#/definitions/Name"
+					}, {
+						"$ref": "#/definitions/_Code"
+					}]
+				},
+				"source": {
+					"type": "boolean"
+				},
+				"process": {
+					"type": "object"
+				}
+			},
+			"required": ["optimize", "regExp"]
+		},
+		"ValueScope": {
+			"type": "object",
+			"properties": {
+				"_values": {
+					"$ref": "#/definitions/ScopeValues"
+				},
+				"_scope": {
+					"$ref": "#/definitions/ScopeStore"
+				},
+				"opts": {
+					"$ref": "#/definitions/VSOptions"
+				},
+				"_reduceValues": {},
+				"_names": {
+					"$ref": "#/definitions/{[x:string]:NameGroup|undefined;}"
+				},
+				"_prefixes": {
+					"$ref": "#/definitions/Set<string>"
+				},
+				"_parent": {
+					"$ref": "#/definitions/Scope"
+				},
+				"_nameGroup": {}
+			},
+			"required": ["_nameGroup", "_names", "_reduceValues", "_scope", "_values", "opts"]
+		},
+		"ScopeValues": {
+			"type": "object"
+		},
+		"ScopeStore": {
+			"type": "object"
+		},
+		"VSOptions": {
+			"type": "object",
+			"properties": {
+				"_n": {
+					"$ref": "#/definitions/Code"
+				},
+				"scope": {
+					"$ref": "#/definitions/ScopeStore"
+				},
+				"es5": {
+					"type": "boolean"
+				},
+				"lines": {
+					"type": "boolean"
+				},
+				"prefixes": {
+					"$ref": "#/definitions/Set<string>"
+				},
+				"parent": {
+					"$ref": "#/definitions/Scope"
+				}
+			},
+			"required": ["_n", "scope"]
+		},
+		"Code": {
+			"anyOf": [{
+				"$ref": "#/definitions/Name"
+			}, {
+				"$ref": "#/definitions/_Code"
+			}]
+		},
+		"Set<string>": {
+			"type": "object",
+			"properties": {
+				"size": {
+					"type": "number"
+				},
+				"__@toStringTag@104": {
+					"type": "string"
+				}
+			},
+			"required": ["__@toStringTag@104", "size"]
+		},
+		"Scope": {
+			"type": "object",
+			"properties": {
+				"_names": {
+					"$ref": "#/definitions/{[x:string]:NameGroup|undefined;}"
+				},
+				"_prefixes": {
+					"$ref": "#/definitions/Set<string>"
+				},
+				"_parent": {
+					"$ref": "#/definitions/Scope"
+				},
+				"_nameGroup": {}
+			},
+			"required": ["_nameGroup", "_names"]
+		},
+		"{[x:string]:NameGroup|undefined;}": {
+			"type": "object"
+		},
+		"{[x:string]:SchemaEnv|undefined;}": {
+			"type": "object"
+		},
+		"{[x:string]:string|SchemaEnv|undefined;}": {
+			"type": "object"
+		},
+		"{[x:string]:AddedFormat|undefined;}": {
+			"type": "object"
+		},
+		"ValidationRules": {
+			"type": "object",
+			"properties": {
+				"rules": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RuleGroup"
+					}
+				},
+				"post": {
+					"$ref": "#/definitions/RuleGroup"
+				},
+				"all": {
+					"$ref": "#/definitions/{[x:string]:boolean|Rule|undefined;}"
+				},
+				"keywords": {
+					"$ref": "#/definitions/{[x:string]:boolean|undefined;}"
+				},
+				"types": {
+					"$ref": "#/definitions/ValidationTypes"
+				}
+			},
+			"required": ["all", "keywords", "post", "rules", "types"]
+		},
+		"RuleGroup": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+					"type": "string"
+				},
+				"rules": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Rule"
+					}
+				}
+			},
+			"required": ["rules"]
+		},
+		"Rule": {
+			"type": "object",
+			"properties": {
+				"keyword": {
+					"type": "string"
+				},
+				"definition": {
+					"$ref": "#/definitions/AddedKeywordDefinition"
+				}
+			},
+			"required": ["definition", "keyword"]
+		},
+		"AddedKeywordDefinition": {
+			"anyOf": [{
+				"allOf": [{
+					"$ref": "#/definitions/CodeKeywordDefinition"
+				}, {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						},
+						"schemaType": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						}
+					},
+					"required": ["schemaType", "type"]
+				}]
+			}, {
+				"allOf": [{
+					"$ref": "#/definitions/FuncKeywordDefinition"
+				}, {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						},
+						"schemaType": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						}
+					},
+					"required": ["schemaType", "type"]
+				}]
+			}, {
+				"allOf": [{
+					"$ref": "#/definitions/MacroKeywordDefinition"
+				}, {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						},
+						"schemaType": {
+							"type": "array",
+							"items": {
+								"enum": ["array", "boolean", "integer", "null", "number", "object", "string"],
+								"type": "string"
+							}
+						}
+					},
+					"required": ["schemaType", "type"]
+				}]
+			}]
+		},
+		"{[x:string]:boolean|Rule|undefined;}": {
+			"type": "object"
+		},
+		"{[x:string]:boolean|undefined;}": {
+			"type": "object"
+		},
+		"ValidationTypes": {
+			"type": "object",
+			"properties": {
+				"string": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"number": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"boolean": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"object": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"integer": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"null": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				},
+				"array": {
+					"anyOf": [{
+						"$ref": "#/definitions/RuleGroup"
+					}, {
+						"type": "boolean"
+					}]
+				}
+			}
+		},
+		"Set<SchemaEnv>": {
+			"type": "object",
+			"properties": {
+				"size": {
+					"type": "number"
+				},
+				"__@toStringTag@104": {
+					"type": "string"
+				}
+			},
+			"required": ["__@toStringTag@104", "size"]
+		}
+	},
+	"$schema": "http://json-schema.org/draft-07/schema#"
+}

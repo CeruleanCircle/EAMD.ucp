@@ -1,0 +1,853 @@
+{
+	"type": "object",
+	"properties": {
+		"model": {
+			"$ref": "#/definitions/OnceNodeJsModel"
+		},
+		"global": {
+			"type": "object"
+		},
+		"validationSchema": {
+			"$ref": "#/definitions/ObjectSchemaOf<OnceNodeJsModel,never>"
+		},
+		"modelValidator": {
+			"$ref": "#/definitions/YupValidtor<OnceNodeJsModel>"
+		}
+	},
+	"required": ["global", "model", "modelValidator", "validationSchema"],
+	"definitions": {
+		"OnceNodeJsModel": {
+			"type": "object",
+			"properties": {
+				"env": {
+					"$ref": "#/definitions/NodeJS.ProcessEnv"
+				},
+				"creationDate": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"mode": {
+					"enum": ["BOOTING", "BROWSER", "I_FRAME", "NODE_JS", "NODE_LOADER", "NOT_DISCOVERED", "SERVICE_WORKER", "TEST_ENVIRONMENT", "WEB_WORKER"],
+					"type": "string"
+				},
+				"state": {
+					"$ref": "#/definitions/State"
+				}
+			},
+			"required": ["creationDate", "env", "mode", "state"]
+		},
+		"NodeJS.ProcessEnv": {
+			"type": "object",
+			"properties": {
+				"TZ": {
+					"description": "Can be used to change the default timezone at runtime",
+					"type": "string"
+				}
+			}
+		},
+		"State": {
+			"enum": ["DISCOVER", "DISCOVER_FAILED", "DISCOVER_SUCESS", "INITIALIZED", "STARTED", "STOPPED"],
+			"type": "string"
+		},
+		"ObjectSchemaOf<OnceNodeJsModel,never>": {
+			"type": "object",
+			"properties": {
+				"fields": {
+					"$ref": "#/definitions/{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}"
+				},
+				"spec": {
+					"$ref": "#/definitions/ObjectSchemaSpec"
+				},
+				"_sortErrors": {},
+				"_nodes": {},
+				"_excludedEdges": {},
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/TypeOfShape<{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}>"
+				},
+				"__outputType": {
+					"$ref": "#/definitions/AssertsShape<{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}>"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__inputType", "__isYupSchema__", "__outputType", "_blacklist", "_excludedEdges", "_nodes", "_sortErrors", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "fields", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}": {
+			"type": "object",
+			"properties": {
+				"env": {
+					"anyOf": [{
+						"$ref": "#/definitions/ObjectSchemaOf<NodeJS.ProcessEnv,never>"
+					}, {
+						"$ref": "#/definitions/default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>"
+					}]
+				},
+				"creationDate": {
+					"$ref": "#/definitions/default<Maybe<Date>,AnyObject,Date>"
+				},
+				"mode": {
+					"$ref": "#/definitions/default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>"
+				},
+				"state": {
+					"$ref": "#/definitions/default<Maybe<State>,AnyObject,State>"
+				}
+			},
+			"required": ["creationDate", "env", "mode", "state"]
+		},
+		"ObjectSchemaOf<NodeJS.ProcessEnv,never>": {
+			"type": "object",
+			"properties": {
+				"fields": {
+					"$ref": "#/definitions/{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}"
+				},
+				"spec": {
+					"$ref": "#/definitions/ObjectSchemaSpec"
+				},
+				"_sortErrors": {},
+				"_nodes": {},
+				"_excludedEdges": {},
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/TypeOfShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"__outputType": {
+					"$ref": "#/definitions/AssertsShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__inputType", "__isYupSchema__", "__outputType", "_blacklist", "_excludedEdges", "_nodes", "_sortErrors", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "fields", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}": {
+			"type": "object",
+			"properties": {
+				"TZ": {
+					"$ref": "#/definitions/default<Maybe<string|undefined>,AnyObject,string|undefined>",
+					"description": "Can be used to change the default timezone at runtime"
+				}
+			},
+			"required": ["TZ"]
+		},
+		"default<Maybe<string|undefined>,AnyObject,string|undefined>": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/Maybe<string|undefined>"
+				},
+				"__outputType": {
+					"type": "string"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"spec": {
+					"type": "object",
+					"properties": {
+						"nullable": {
+							"type": "boolean"
+						},
+						"presence": {
+							"enum": ["defined", "optional", "required"],
+							"type": "string"
+						},
+						"default": {},
+						"abortEarly": {
+							"type": "boolean"
+						},
+						"strip": {
+							"type": "boolean"
+						},
+						"strict": {
+							"type": "boolean"
+						},
+						"recursive": {
+							"type": "boolean"
+						},
+						"label": {
+							"type": "string"
+						},
+						"meta": {}
+					},
+					"required": ["nullable", "presence"]
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__isYupSchema__", "_blacklist", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"Maybe<string|undefined>": {
+			"type": ["null", "string"]
+		},
+		"Test": {
+			"allOf": [{
+				"type": "object",
+				"properties": {
+					"OPTIONS": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"message": {
+								"anyOf": [{
+									"type": "object",
+									"additionalProperties": false,
+									"patternProperties": {
+										"^[0-9]+$": {}
+									}
+								}, {
+									"type": ["string", "object"]
+								}]
+							},
+							"test": {
+								"type": "object"
+							},
+							"params": {
+								"$ref": "#/definitions/ExtraParams"
+							},
+							"exclusive": {
+								"type": "boolean"
+							}
+						},
+						"required": ["test"]
+					}
+				},
+				"required": ["OPTIONS"]
+			}, {
+				"type": "object"
+			}]
+		},
+		"ExtraParams": {
+			"type": "object"
+		},
+		"default": {
+			"type": "object",
+			"properties": {
+				"list": {
+					"$ref": "#/definitions/Set<unknown>"
+				},
+				"refs": {
+					"$ref": "#/definitions/Map<string,default<unknown>>"
+				},
+				"size": {
+					"type": "number"
+				}
+			},
+			"required": ["list", "refs", "size"]
+		},
+		"Set<unknown>": {
+			"type": "object",
+			"properties": {
+				"size": {
+					"type": "number"
+				},
+				"__@toStringTag@435": {
+					"type": "string"
+				}
+			},
+			"required": ["__@toStringTag@435", "size"]
+		},
+		"Map<string,default<unknown>>": {
+			"type": "object",
+			"properties": {
+				"size": {
+					"type": "number"
+				},
+				"__@toStringTag@435": {
+					"type": "string"
+				}
+			},
+			"required": ["__@toStringTag@435", "size"]
+		},
+		"Record<string,boolean>": {
+			"type": "object"
+		},
+		"ObjectSchemaSpec": {
+			"allOf": [{
+				"type": "object",
+				"properties": {
+					"nullable": {
+						"type": "boolean"
+					},
+					"presence": {
+						"enum": ["defined", "optional", "required"],
+						"type": "string"
+					},
+					"default": {},
+					"abortEarly": {
+						"type": "boolean"
+					},
+					"strip": {
+						"type": "boolean"
+					},
+					"strict": {
+						"type": "boolean"
+					},
+					"recursive": {
+						"type": "boolean"
+					},
+					"label": {
+						"type": "string"
+					},
+					"meta": {}
+				},
+				"required": ["nullable", "presence"]
+			}, {
+				"type": "object",
+				"properties": {
+					"noUnknown": {
+						"type": "boolean"
+					}
+				}
+			}]
+		},
+		"TypeOfShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>": {
+			"type": "object",
+			"properties": {
+				"TZ": {
+					"$ref": "#/definitions/Maybe<string|undefined>",
+					"description": "Can be used to change the default timezone at runtime"
+				}
+			},
+			"required": ["TZ"]
+		},
+		"AssertsShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>": {
+			"type": "object",
+			"properties": {
+				"TZ": {
+					"description": "Can be used to change the default timezone at runtime",
+					"type": "string"
+				}
+			}
+		},
+		"default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>": {
+			"type": "object",
+			"properties": {
+				"builder": {},
+				"type": {
+					"type": "string",
+					"enum": ["lazy"]
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/TypeOfShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"__outputType": {
+					"$ref": "#/definitions/AssertsShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"_resolve": {}
+			},
+			"required": ["__inputType", "__isYupSchema__", "__outputType", "_resolve", "builder", "type"]
+		},
+		"default<Maybe<Date>,AnyObject,Date>": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/Maybe<Date>"
+				},
+				"__outputType": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"spec": {
+					"type": "object",
+					"properties": {
+						"nullable": {
+							"type": "boolean"
+						},
+						"presence": {
+							"enum": ["defined", "optional", "required"],
+							"type": "string"
+						},
+						"default": {},
+						"abortEarly": {
+							"type": "boolean"
+						},
+						"strip": {
+							"type": "boolean"
+						},
+						"strict": {
+							"type": "boolean"
+						},
+						"recursive": {
+							"type": "boolean"
+						},
+						"label": {
+							"type": "string"
+						},
+						"meta": {}
+					},
+					"required": ["nullable", "presence"]
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__isYupSchema__", "__outputType", "_blacklist", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"Maybe<Date>": {
+			"anyOf": [{
+				"type": "string",
+				"format": "date-time"
+			}, {
+				"type": "null"
+			}]
+		},
+		"default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/Maybe<Mode|Runtime>"
+				},
+				"__outputType": {
+					"$ref": "#/definitions/BaseSchema.TOutput"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"spec": {
+					"type": "object",
+					"properties": {
+						"nullable": {
+							"type": "boolean"
+						},
+						"presence": {
+							"enum": ["defined", "optional", "required"],
+							"type": "string"
+						},
+						"default": {},
+						"abortEarly": {
+							"type": "boolean"
+						},
+						"strip": {
+							"type": "boolean"
+						},
+						"strict": {
+							"type": "boolean"
+						},
+						"recursive": {
+							"type": "boolean"
+						},
+						"label": {
+							"type": "string"
+						},
+						"meta": {}
+					},
+					"required": ["nullable", "presence"]
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__isYupSchema__", "__outputType", "_blacklist", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"Maybe<Mode|Runtime>": {
+			"anyOf": [{
+				"enum": ["BOOTING", "BROWSER", "I_FRAME", "NODE_JS", "NODE_LOADER", "NOT_DISCOVERED", "SERVICE_WORKER", "TEST_ENVIRONMENT", "WEB_WORKER"],
+				"type": "string"
+			}, {
+				"type": "null"
+			}]
+		},
+		"BaseSchema.TOutput": {
+			"enum": ["BOOTING", "BROWSER", "I_FRAME", "NODE_JS", "NODE_LOADER", "NOT_DISCOVERED", "SERVICE_WORKER", "TEST_ENVIRONMENT", "WEB_WORKER"],
+			"type": "string"
+		},
+		"default<Maybe<State>,AnyObject,State>": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string"
+				},
+				"__inputType": {
+					"$ref": "#/definitions/Maybe<State>"
+				},
+				"__outputType": {
+					"$ref": "#/definitions/BaseSchema.TOutput_1"
+				},
+				"__isYupSchema__": {
+					"type": "boolean"
+				},
+				"deps": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"tests": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Test"
+					}
+				},
+				"transforms": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				},
+				"conditions": {},
+				"_mutate": {},
+				"_typeError": {},
+				"_whitelistError": {},
+				"_blacklistError": {},
+				"_whitelist": {
+					"$ref": "#/definitions/default"
+				},
+				"_blacklist": {
+					"$ref": "#/definitions/default"
+				},
+				"exclusiveTests": {
+					"$ref": "#/definitions/Record<string,boolean>"
+				},
+				"spec": {
+					"type": "object",
+					"properties": {
+						"nullable": {
+							"type": "boolean"
+						},
+						"presence": {
+							"enum": ["defined", "optional", "required"],
+							"type": "string"
+						},
+						"default": {},
+						"abortEarly": {
+							"type": "boolean"
+						},
+						"strip": {
+							"type": "boolean"
+						},
+						"strict": {
+							"type": "boolean"
+						},
+						"recursive": {
+							"type": "boolean"
+						},
+						"label": {
+							"type": "string"
+						},
+						"meta": {}
+					},
+					"required": ["nullable", "presence"]
+				},
+				"_type": {
+					"type": "string"
+				},
+				"equals": {
+					"type": "object"
+				},
+				"is": {
+					"type": "object"
+				},
+				"not": {
+					"type": "object"
+				},
+				"nope": {
+					"type": "object"
+				}
+			},
+			"required": ["__isYupSchema__", "__outputType", "_blacklist", "_type", "_whitelist", "conditions", "deps", "equals", "exclusiveTests", "is", "nope", "not", "spec", "tests", "transforms", "type"]
+		},
+		"Maybe<State>": {
+			"anyOf": [{
+				"enum": ["DISCOVER", "DISCOVER_FAILED", "DISCOVER_SUCESS", "INITIALIZED", "STARTED", "STOPPED"],
+				"type": "string"
+			}, {
+				"type": "null"
+			}]
+		},
+		"BaseSchema.TOutput_1": {
+			"$ref": "#/definitions/State"
+		},
+		"TypeOfShape<{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}>": {
+			"type": "object",
+			"properties": {
+				"env": {
+					"$ref": "#/definitions/TypeOfShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"creationDate": {
+					"$ref": "#/definitions/Maybe<Date>"
+				},
+				"mode": {
+					"$ref": "#/definitions/Maybe<Mode|Runtime>"
+				},
+				"state": {
+					"$ref": "#/definitions/Maybe<State>"
+				}
+			},
+			"required": ["creationDate", "env", "mode", "state"]
+		},
+		"AssertsShape<{env:ObjectSchemaOf<NodeJS.ProcessEnv,never>|default<ObjectSchemaOf<NodeJS.ProcessEnv,never>,any>;creationDate:default<Maybe<Date>,AnyObject,Date>;mode:default<Maybe<Mode|Runtime>,AnyObject,Mode|Runtime>;state:default<Maybe<State>,AnyObject,State>;}>": {
+			"type": "object",
+			"properties": {
+				"env": {
+					"$ref": "#/definitions/AssertsShape<{[x:string]:default<Maybe<string|undefined>,AnyObject,string|undefined>;TZ:default<Maybe<string|undefined>,AnyObject,string|undefined>;}>"
+				},
+				"creationDate": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"mode": {
+					"enum": ["BOOTING", "BROWSER", "I_FRAME", "NODE_JS", "NODE_LOADER", "NOT_DISCOVERED", "SERVICE_WORKER", "TEST_ENVIRONMENT", "WEB_WORKER"],
+					"type": "string"
+				},
+				"state": {
+					"$ref": "#/definitions/State"
+				}
+			},
+			"required": ["creationDate", "env", "mode", "state"]
+		},
+		"YupValidtor<OnceNodeJsModel>": {
+			"type": "object"
+		}
+	},
+	"$schema": "http://json-schema.org/draft-07/schema#"
+}
