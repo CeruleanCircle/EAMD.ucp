@@ -124,7 +124,7 @@ var once = new OnceNodeJs()
 //@ts-ignore
 once.model.creationDate = "not a date"
 
-let foo = await once.validator.validate(once.model, once.validationSchema)
+let foo = await once.modelValidator.validate(once.model, once.validationSchema)
 dir(foo)
 
 const ajv = new Ajv()

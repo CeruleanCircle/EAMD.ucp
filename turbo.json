@@ -3,7 +3,7 @@
   "pipeline": {
     
     "build": {
-      
+      "cache": false
     },
     "clean":{
       "cache": false
