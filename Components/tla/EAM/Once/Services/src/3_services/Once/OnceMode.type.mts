@@ -4,7 +4,8 @@ import { State } from "./State.enum.mjs"
 
 export interface OnceModel {
   creationDate: Date
-  // mode: Mode | Runtime
-  // state: State
-  // global: typeof globalThis
+  mode: Mode | Runtime
+  state: State
+
+
 }

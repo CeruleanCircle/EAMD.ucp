@@ -3,7 +3,7 @@ import { ValidationResult } from "@eamd.ucp/tla.eam.once.services/dist/3_service
 import { SchemaOf, ValidationError } from "yup"
 
 export class YupValidtor<TModel> implements ModelValidator<TModel, SchemaOf<TModel>> {
-  validate(model: TModel, schema: SchemaOf<TModel, never>): ValidationResult<TModel> {
+  validate(model: TModel, schema: SchemaOf<TModel>): ValidationResult<TModel> {
     const foo = schema.isValidSync(model, { abortEarly: false })
     try {
       schema.validateSync(model, { abortEarly: false })
@@ -13,10 +13,10 @@ export class YupValidtor<TModel> implements ModelValidator<TModel, SchemaOf<TMod
         // e.errors.forEach((e) => {
         //   console.log(e)
         // })
-        var result: ValidationResult<TModel> = {}
+        const result: ValidationResult<TModel> = {}
         e.inner.map((e) => {
           console.log(e.message, e.path)
-          //@ts-ignore
+          //@ts-expect-error
           if (e.path) result[e.path] = e.message
         })
         return result
@@ -32,7 +32,7 @@ export class YupValidtor<TModel> implements ModelValidator<TModel, SchemaOf<TMod
     //         console.log(e.message, e.path));
     //     });
     // });
-    //@ts-ignore
+    //@ts-expect-error
     return null
   }
 }

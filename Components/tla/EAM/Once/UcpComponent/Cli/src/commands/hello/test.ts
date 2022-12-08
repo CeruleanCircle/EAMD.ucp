@@ -14,7 +14,7 @@ hello world! (./src/commands/hello/world.ts)
   static args = []
 
   async run(): Promise<void> {
-    // await this.config.runHook("write-config", { data: { githubToken: "ghjk" } })
+    await this.config.runHook("write-config", { data: { githubToken: "ghjk" } })
 
     // const { successes } = await this.config.runHook("read-config", {})
 

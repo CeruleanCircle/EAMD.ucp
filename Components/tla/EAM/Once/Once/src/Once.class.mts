@@ -85,11 +85,11 @@ import { YupValidtor } from "./YupValidtor.class.mjs"
 import { Mode } from "@eamd.ucp/tla.eam.once.services/dist/3_services/Once/Mode.type.mjs"
 import { Once } from "@eamd.ucp/tla.eam.once.services/dist/3_services/Once/Once.interface.mjs"
 import { OnceModel } from "@eamd.ucp/tla.eam.once.services/dist/3_services/Once/OnceMode.type.mjs"
+import { Runtime } from "@eamd.ucp/tla.eam.once.services/dist/3_services/Once/Runtime.enum.mjs"
 import { State } from "@eamd.ucp/tla.eam.once.services/dist/3_services/Once/State.enum.mjs"
 import Ajv from "ajv"
 import { dir } from "console"
-import { stripVTControlCharacters } from "util"
-import { SchemaOf, array, date, number, object, string } from "yup"
+import { SchemaOf, date, mixed, object } from "yup"
 
 interface OnceNodeJsModel extends OnceModel {
   env: NodeJS.ProcessEnv
@@ -98,33 +98,31 @@ interface OnceNodeJsModel extends OnceModel {
 class OnceNodeJs implements Once<OnceNodeJsModel, SchemaOf<OnceNodeJsModel>> {
   model: OnceNodeJsModel = {
     creationDate: new Date(),
-    // mode: Mode.BOOTING,
-    // state: State.DISCOVER,
-    // global: globalThis,
+    mode: Mode.BOOTING,
+    state: State.DISCOVER,
     env: process.env,
   }
+  global = globalThis
 
   validationSchema: SchemaOf<OnceNodeJsModel> = object().shape({
     creationDate: date().required(),
-    // mode: object(),
-    // state: object(),
-    // global: object(),
     env: object(),
+    mode: mixed().oneOf(Object.values(Runtime)).oneOf(Object.values(Mode)),
+    state: mixed().oneOf(Object.values(State)),
   })
 
   modelValidator = new YupValidtor<OnceNodeJsModel>()
 
-  async start() {
-    return this
+   start():Promise<this> {
+    return new Promise((resolve) => {
+      resolve(this)
+    })
   }
 }
 
 var once = new OnceNodeJs()
 
-//@ts-ignore
-once.model.creationDate = "not a date"
-
-let foo = await once.modelValidator.validate(once.model, once.validationSchema)
+const foo = await once.modelValidator.validate(once.model, once.validationSchema)
 dir(foo)
 
 const ajv = new Ajv()
