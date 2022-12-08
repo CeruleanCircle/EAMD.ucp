@@ -1,4 +1,4 @@
 export type ValidationResult<TModel> = {
-  isValid:boolean
- errors?:Record<keyof TModel, string>[]
+  validated:TModel | undefined
+  errors?:Record<keyof TModel, string>[]
 }

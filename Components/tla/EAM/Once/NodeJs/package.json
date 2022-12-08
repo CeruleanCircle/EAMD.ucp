@@ -13,7 +13,12 @@
   ],
   "dependencies": {
     "@eamd.ucp/tla.eam.once.services": "workspace:^1.0.0",
-    "simple-git": "^3.15.1"
+    "@sodaru/yup-to-json-schema": "^1.0.5",
+    "ajv": "^8.11.2",
+    "ajv-formats": "^2.1.1",
+    "simple-git": "^3.15.1",
+    "typescript-json-schema": "^0.55.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@eamd.ucp/eslint-plugin-tla.eam.once.ucpcomponent.eslint": "workspace:@eamd.ucp/tla.eam.once.ucpcomponent.eslint@*",
@@ -26,7 +31,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "clean":"rimraf dist tsconfig.tsbuildinfo",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
     "lint": "eslint src/**/*.*ts*"
   }
 }

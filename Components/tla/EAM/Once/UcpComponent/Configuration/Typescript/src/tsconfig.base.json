@@ -13,7 +13,7 @@
       "strict": true,
       "noImplicitAny": true,
       "skipLibCheck": true,
-      "incremental": false
+      "incremental": false,
     }
   }
   
