@@ -1,7 +1,7 @@
 import GitRepository from "./Git/GitRepository.interface.mjs"
 import { UcpComponent } from "./Ucp/UcpComponent.interface.mjs"
 
-interface EnterpriseArchitectureManagementRepository extends GitRepository, UcpComponent {}
+interface EnterpriseArchitectureManagementRepository extends GitRepository {}
 
 export type {
   EnterpriseArchitectureManagementRepository,

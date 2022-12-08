@@ -1,6 +1,7 @@
-import { UcpComponentDescriptor } from "./UcpComponentDescriptor.interface.mjs"
-import { UcpUnit } from "./UcpUnit.interface.mjs"
+import { ModelValidator } from "./ModelValidator.interface.mjs"
 
-export interface UcpComponent extends UcpUnit {
-  descriptor: UcpComponentDescriptor
+export interface UcpComponent<TModel, TValidationSchema> {
+  model: TModel
+  validationSchema: TValidationSchema
+  modelValidator: ModelValidator<TModel, TValidationSchema>
 }

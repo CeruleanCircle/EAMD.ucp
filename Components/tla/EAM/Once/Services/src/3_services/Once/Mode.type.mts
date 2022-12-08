@@ -1,0 +1,4 @@
+export enum Mode {
+  BOOTING = "BOOTING",
+  NOT_DISCOVERED = "NOT_DISCOVERED",
+}

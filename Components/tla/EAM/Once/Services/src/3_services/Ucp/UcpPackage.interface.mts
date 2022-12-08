@@ -1,3 +1,3 @@
 import { UcpComponent } from "./UcpComponent.interface.mjs"
 
-export type UcpPackage = UcpComponent
+// export type UcpPackage = UcpComponent

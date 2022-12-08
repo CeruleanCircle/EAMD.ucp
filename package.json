@@ -11,6 +11,8 @@
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
     "build": "turbo run build",
+    "clean":"turbo run clean",
+    "rebuild":"pnpm run clean && pnpm run build",
     "build:watch": "turbo run build -- --watch",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint --no-cache -- --fix"
@@ -21,7 +23,7 @@
   },
   "engines": {
     "pnpm": ">=7.17.1",
-    "node": ">=19.12.1",
+    "node": ">=18.12.1",
     "npm": ">=8.19.2",
     "git": ">=2.37.1"
   },
