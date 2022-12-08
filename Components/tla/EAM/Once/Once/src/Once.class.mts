@@ -113,7 +113,7 @@ class OnceNodeJs implements Once<OnceNodeJsModel, SchemaOf<OnceNodeJsModel>> {
 
   modelValidator = new YupValidtor<OnceNodeJsModel>()
 
-   start():Promise<this> {
+  start(): Promise<this> {
     return new Promise((resolve) => {
       resolve(this)
     })
@@ -122,22 +122,35 @@ class OnceNodeJs implements Once<OnceNodeJsModel, SchemaOf<OnceNodeJsModel>> {
 
 var once = new OnceNodeJs()
 
+//@ts-ignore
+once.model.mode = "VALIDATION ERROR"
+
 const foo = await once.modelValidator.validate(once.model, once.validationSchema)
 dir(foo)
 
-const ajv = new Ajv()
 
-const schema = {
-  type: "object",
-  properties: {
-    foo: { type: "integer" },
-    bar: { type: "string" },
-  },
-  required: ["foo"],
-  additionalProperties: false,
-}
 
-const data = { foo: 1, bar: 123 }
-const valid = ajv.validate(schema, data)
-if (!valid) console.log(ajv.errors)
-else console.log("valid")
+
+
+
+
+
+
+
+
+// const ajv = new Ajv()
+
+// const schema = {
+//   type: "object",
+//   properties: {
+//     foo: { type: "integer" },
+//     bar: { type: "string" },
+//   },
+//   required: ["foo"],
+//   additionalProperties: false,
+// }
+
+// const data = { foo: 1, bar: 123 }
+// const valid = ajv.validate(schema, data)
+// if (!valid) console.log(ajv.errors)
+// else console.log("valid")
